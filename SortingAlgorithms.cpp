@@ -43,8 +43,26 @@ void insertionSort(int arr[],int n){
     
     }
 }
+// the selection sort is like a card first we pick a key or the  current elemnt then go to the sorted part of arr and find the good place to place the value 
+void selectionSort(int arr[],int n){
+    //the first loop will go for the unsorted by default value
+    for (int i = 1; i < n; i++) {
+        int cur = arr[i];// this is the by default first unsorted part value 
+        int pre = i - 1 ;// this the first value of the sorted part 
+        while(pre>=0&&arr[pre]>cur){//this is the mean logic where we will shift the greater value to the right
+            arr[pre+1] = arr[pre];// so if the arr is like this [4,1,] so it will shift the 4 to right --> [4,4,] 
+            pre--;// and also if the j = 0 like [4,1] = [0,1] after the loop it will became [4,4]== j will become -1;
+        }
+        arr[pre+1] = cur;//that why we are using the pre+1 because the j will become from j=0 --> j=-1
+    }
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+}
+
 int main() {
-    int arr[] = {1,2,4,3};
+    int arr[] = {4,1,5,2,3};
     int n = sizeof(arr)/sizeof(arr[0]);
+
     return 0;
 }
