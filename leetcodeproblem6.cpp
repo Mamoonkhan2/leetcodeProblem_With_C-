@@ -91,7 +91,7 @@ int updatedbestDaysell1(vector <int> arr){
     }
     return profit;
 }
-    int main(){
+int main(){
     vector <int> arr = {7,1,5,3,6,4};
     double x = 2;
     int n = -3;
