@@ -11,7 +11,7 @@ void bublesort(int arr[],int n){
         for (int j = 0; j < n-i-1; j++) {
                 if(arr[j] >= arr[j+1])
                 {
-                    is_swap = true;
+                  is_swap = true;
                   swap(arr[j],arr[j+1]);
                 }       
             }
@@ -27,9 +27,8 @@ void bublesort(int arr[],int n){
 // insertion sort algorithms
 // one part is sorted and other is unsorted
 void insertionSort(int arr[],int n){
-
+    //[3,2,1]
     for (int i = 0; i < n-1; i++) {
-        cout<<i<<endl;
         int smalestidx =i;//unsorted part of array 
         for (int j = i+1; j < n; j++) {
             if(arr[j]<arr[smalestidx]){
@@ -43,7 +42,8 @@ void insertionSort(int arr[],int n){
     
     }
 }
-// the selection sort is like a card first we pick a key or the  current elemnt then go to the sorted part of arr and find the good place to place the value 
+// the selection sort is like a card first we pick a key or the current  elemnt then go to the sorted part of arr and find the good place to place the value 
+
 void selectionSort(int arr[],int n){
     //the first loop will go for the unsorted by default value
     for (int i = 1; i < n; i++) {
@@ -59,10 +59,47 @@ void selectionSort(int arr[],int n){
         cout << arr[i] << " ";
     }
 }
+//dnf detch national flag algorithms three rule
+/*
+    vision is that first at the starting time the algorithm will have the value in unsorted manner
+    low---mid---unsortedPart---high --> in starting the unsorted part is between mid---***--high then 
+    the low increace and the also the mid and the high decrease 
+    then it become like
+    low---mid---high
+    000---111---2222
+*/
+//0s from 0 to low
+//1s from low to mid
+//2s from high to n-1
+void sort01s(vector &arr){//this is the brute force approach to find the 0s1s2s
+    int zero =0,one = 0,two=0;
+    for(int i :arr){
+        if(i == 0) zero++;
+        if(i==1)   one++;
+        if(i==2)   two++;
+    }
+    for(int i =0;i<arr.size();i++){
+        if(zero>0){
+            arr[i]=0;
+            zero--;
+        }
+        else if(one>0){
+            arr[i]=1;
+            one--;
+        }
+        else if(two>0){
+            arr[i]=2;
+            two--;
+        }
+    }
+    for(int i :arr){
+        cout<<i;
+    }
 
+}
+//this is the detch national flag approach
+void dnf();
 int main() {
-    int arr[] = {4,1,5,2,3};
-    int n = sizeof(arr)/sizeof(arr[0]);
-
+    vector <int> arr = {0,2,1,0,2,1,0,2,1};
     return 0;
 }
