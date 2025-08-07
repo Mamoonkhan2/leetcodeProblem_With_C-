@@ -47,6 +47,7 @@ void insertionSort(int arr[],int n){
 void selectionSort(int arr[],int n){
     //the first loop will go for the unsorted by default value
     for (int i = 1; i < n; i++) {
+        //[4,1,3,2]
         int cur = arr[i];// this is the by default first unsorted part value 
         int pre = i - 1 ;// this the first value of the sorted part 
         while(pre>=0&&arr[pre]>cur){//this is the mean logic where we will shift the greater value to the right
@@ -68,10 +69,11 @@ void selectionSort(int arr[],int n){
     low---mid---high
     000---111---2222
 */
-//0s from 0 to low
-//1s from low to mid
+//0s from 0 to low-1
+//1s from low to mid-1
 //2s from high to n-1
-void sort01s(vector &arr){//this is the brute force approach to find the 0s1s2s
+//unsorted part mid to high
+void sort01s(vector<int> &arr){//this is the brute force approach to find the 0s1s2s
     int zero =0,one = 0,two=0;
     for(int i :arr){
         if(i == 0) zero++;
@@ -98,8 +100,32 @@ void sort01s(vector &arr){//this is the brute force approach to find the 0s1s2s
 
 }
 //this is the detch national flag approach
-void dnf();
+void dnf(vector <int> &arr){
+    int low = 0,mid = 0,high = arr.size()-1;
+    // {0,2,1,0,2,1,0,2,1}
+    while(mid<=high){
+        if(arr[mid]==0)//0
+        {
+            swap(arr[low],arr[mid]);
+            low++;
+            mid++;
+        };
+        if(arr[mid]==1)//1
+        {
+            mid++;
+        };
+        if(arr[mid]==2)//2
+        {
+            swap(arr[high],arr[mid]);
+            high--;   
+        };
+    }
+    for(int i:arr){
+        cout<<i;
+    }
+}
 int main() {
-    vector <int> arr = {0,2,1,0,2,1,0,2,1};
+    vector <int> arr = {0,2,1,2,0,1};
+    dnf(arr);
     return 0;
 }
