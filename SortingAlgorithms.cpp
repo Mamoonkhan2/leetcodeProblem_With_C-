@@ -124,8 +124,74 @@ void dnf(vector <int> &arr){
         cout<<i;
     }
 }
+//merging two array
+/*
+we have some conditoin here like when a --> 1,2,3 b --> 5,6,7 then it will merge will
+but if the last is the smalest of a it will become the first or last according to secuation
+also we will need to make anator loop after the merging loop so that if the i <0 like int he case of a -->{5,6,7} b -->1,2,3
+in this case we will need the aditional loop to set the value of j in back_loop becase the idx will in the here| so will start
+from here and then start fetting the value of the j in the a so that all loop come in one loop a
+*/
+void mergarray(int a[],int i ,int b[],int j){
+    int idx = i+j;
+    while (j>=0&&i>=0)
+    {
+        if(a[i]>=b[j]){
+            a[idx--] = a[i--];
+        }
+        else{
+
+        }
+    }
+}
+/*
+    next perumutation
+    it is the diffrent sequance of the number or deffrent form of the number 1,2,3 --> 3,1,2 etc
+    there is a brute force approch for it where we have to find all the possible form of the number then have to find the next perumutation
+    but we will use the 
+    lexigraphically next permutation
+    dictonary like structure like a,c,b -->  b,a,c | 1,2,3 --> 1,3,2 --> 2,1,3
+    5,1,4,3,2
+*/
+void nextpermutation(vector <int> &arr){
+    int n = arr.size();
+    int pivit = -1;
+    for (int i = n-2; i >= 0; i--) {// here we will start the loop in the backward form to find the pivit because the pivit will form where the permutatoin will start
+        if(arr[i] < arr[i+1])//here will find the if the value is leesthen the i + 1 then it is the pivit
+        {
+            pivit = i;
+            break;
+        }
+    }
+    if (pivit == -1) // this will mean that there is no pivit in the case 5,4,3,2,1 so just reverse it or it first permutation --> 1,2,3,4,5
+    {
+        int i = 0;
+        int j = n-1;
+        while(i<j){
+            swap(arr[j--],arr[i++]);
+        }
+    }
+    else// if we find the  pivit
+    {
+        for (int i = n-1; i > pivit; i--) {// now we have to find the greater value than pivit and swap it with the pivit
+            if(arr[i]>arr[pivit]){
+                swap(arr[pivit],arr[i]);
+            }
+        }
+        // after finding the pivit and swap it we will have the decreasing part after the pivit now we will change that part to the increasing 
+        // or reverse it after the pivit + 1
+        int i = pivit+1;
+        int j = n-1;
+        while(i<j){
+            swap(arr[j--],arr[i++]);
+        }
+    }
+    for(int i = 0;i<arr.size();i++){
+        cout<<arr[i];
+    }
+}
 int main() {
-    vector <int> arr = {0,2,1,2,0,1};
-    dnf(arr);
+    vector <int> arr = {5,4,3,2,1};
+    nextpermutation(arr);
     return 0;
 }
