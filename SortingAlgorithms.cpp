@@ -190,8 +190,10 @@ void nextpermutation(vector <int> &arr){
         cout<<arr[i];
     }
 }
+
+
 int main() {
     vector <int> arr = {5,4,3,2,1};
-    nextpermutation(arr);
+
     return 0;
 }
