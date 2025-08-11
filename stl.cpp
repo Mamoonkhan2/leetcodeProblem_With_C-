@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <list>
+#include <deque>
 using namespace std;
 
 
@@ -16,20 +18,69 @@ int main() {
         (back)      --> will show the last  value of the vector {11,22,33} => 33
         (vec(size,value)) --> like {vector <int> arr(size,value)} == so the size is that how many size/capacity  value = is that what value we will insert on each idx
             or like arr(2,2) --> {2,2} arr(4size,4the value to insert on each idx) --> {4,4,4,4}  4 S/4 C so the it will iterate the value in all the vector 
-   
-    
-    
-    
-
-
-
-
+        (begin)   --> will give the first element memory location like a pointer cout<<*(arr.begin())<<endl;
+        (end)     --> will give the last element memory location like a p in startin teh arr.end() is not pointing the last value it point arr.end()+1   cout<<*(arr.end()-1);
+        (erase)   --> it is use to erase the element in the vecotr erase(arr.begin()) it erase the first value from the array
+            but if we want to remove the 2nd index value simple erase(arr.begin()+2) we can also delete multiple value from aray
+            erase(start,end) start is included and end is not like end - 1 arr.erase(arr.begin()+1,arr.begin+3)
+            can change the size but not the capacity
+        (insert) --> will insert the value it specific index can change the capasity and size arr.insert(arr.begin()+2,100);
+        (clear)  --> will clear all the vector can change size only
+        (empty)  --> will check if the vector is empty or not
+        (iterator) --> it is use for the vector to iterater through the vector like we use the arr.begin() which point to the starting index pointer and end which is the end+1
+                       vector <int>::iterator it;
+        (reverse_iterator)  --> vector <int>::reverse_iterator it; is use for reverseing vector
+        (rbegin)   --> is the last element index {1,2,3,4} = 4
+        (rend)     --> is the garbge value {rend{1,2,3,4}end} that why we use end - 1
+        (list)     --> it is dously linked array like we can add the element in the front/back also can remove the element from the front and back
+                       list   <int> arrl = {1,2,3,4}; so it mean we will have the front function for at as will as start
+                       also it is not allow random accec in array 
+        (deque)    --> is known as double ended que is as like list can form functoin for front and back it is allow random acces d[2]
+        {{{{
+            we can also use this methood 
+            vector <int>::reverse_iterator it;
+            for (vector <int>::reverse_iterator it = arr.rbegin();it!=arr.rend(); it++)
+            for (vector <int>::iterator it = arr.begin;it!=arr.end();it++)
+            but modern c++ automaticaly understand what are we asseging the variable so
+            for (auto it = arr.rbegin();it!=arr.rend(); it++)
+            for (auto it = arr.begin() ;it!=arr.end() ; it++)
+        }}}}
+        (pair)  --> is use for to stor the pair or double values in can be char or integers 
+            pair  p = {1,'a'};                         normal
+            pair<int,int> p = {1,2};                   normal wiht insealizer
+            pair <int,pair<int,int>> p = {1,{2,3}};    need insealizer
+            vector<pair<int,int>> vp = {{1,2},{3,4}};  pair in vector vector<pair<int,int>> vectorpair;
+            *******************************************************
+            loop to iterater through pair
+            for(pair<int,int> p:vp){    
+                cout<<p.first<<" "<<p.second<<endl; to show the pair first and secound value
+            }
+            *******************************************************
+            for (int i = 0; i < 3; i++) {
+                cout<<vp[i].first<<" "<<vp[i].second; to show the pair first and secound value
+                cout<<endl;
+            }
+            *******************************************************
+                vp.push_back({4,4}); // it will acceume that we will first make the pair then it will push back it in the vector
+                vp.emplace_back(5,5);// it will in-place the object or automaticaly create teh pair and then push it in the back of vector
 
     */
-  
-    vector <int> arr(10,10);
-    cout<<arr.capacity();
-    cout<<arr.size();
-
-//    cout<<arr.size()<<endl<<arr.capacity();
+    vector <int> v  = {1,2,3,4};
+    list   <int> l = {1,2,3,4};
+    deque  <int> d = {1,2,3,4};
+    pair <int,int> ps = {1,2};
+    vector<pair<int,int>> vp = {{1,1},{2,2},{3,3}};
+    vp.push_back({4,4}); // it will acceume that we will first make the pair then it will push back it in the vector
+    vp.emplace_back(5,5);// it will in-place the object or automaticaly create teh pair and then push it in the back of vector
+             for(pair<int,int> p:vp){    
+                cout<<p.first<<" "<<p.second<<endl; 
+            }   
+    // for (int i = 0; i < vp.size(); i++) {
+    //             cout<<vp[i].first.first.first.first<<" "<<vp[i].first.first.second.first<<" ||| "<<vp[i].second.second.first.first<<" "<<vp[i].second.second.second.first;//to show the pair first and secound value
+    //             cout<<endl;
+    // }
+    // for (auto it = arrd.begin();it!=arrd.end(); it++) {
+    //     cout<<*(it)<<" ";
+    // }
+    
 }
