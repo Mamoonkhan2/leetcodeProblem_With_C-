@@ -2,6 +2,7 @@
 #include <vector>
 #include <list>
 #include <deque>
+#include <stack>
 using namespace std;
 
 
@@ -64,23 +65,43 @@ int main() {
                 vp.push_back({4,4}); // it will acceume that we will first make the pair then it will push back it in the vector
                 vp.emplace_back(5,5);// it will in-place the object or automaticaly create teh pair and then push it in the back of vector
 
-    */
-    vector <int> v  = {1,2,3,4};
-    list   <int> l = {1,2,3,4};
-    deque  <int> d = {1,2,3,4};
-    pair <int,int> ps = {1,2};
-    vector<pair<int,int>> vp = {{1,1},{2,2},{3,3}};
-    vp.push_back({4,4}); // it will acceume that we will first make the pair then it will push back it in the vector
-    vp.emplace_back(5,5);// it will in-place the object or automaticaly create teh pair and then push it in the back of vector
-             for(pair<int,int> p:vp){    
-                cout<<p.first<<" "<<p.second<<endl; 
-            }   
-    // for (int i = 0; i < vp.size(); i++) {
-    //             cout<<vp[i].first.first.first.first<<" "<<vp[i].first.first.second.first<<" ||| "<<vp[i].second.second.first.first<<" "<<vp[i].second.second.second.first;//to show the pair first and secound value
-    //             cout<<endl;
-    // }
-    // for (auto it = arrd.begin();it!=arrd.end(); it++) {
-    //     cout<<*(it)<<" ";
-    // }
+            &&&&&&&&&&&&&&&&&&&&&&&
+            non sequancial container
+            *stack* lifo last in fist outf
+            it store the value in the stack form it add the value in the last and first remove the last value 
+            (top) --> it is use to show the top value of the stack or last in
+            (swap) --> it will swap the value with each other  
+                stack<int> p;
+                stack pd;
+                p.push(1); ===  | 3 | --> last in and first out 
+                p.push(2); ===  | 2 | 
+                p.push(3); ===  | 1 |
+                                -----
+        
+                    """""""""""""""WILL show the value of the stack container"""""""""""""""""""
+                    
+                                                while (!s.empty())
+                                                {
+                                                    cout<<" | "<<s.top()<<" | ";
+                                                    s.pop();
+                                                    cout<<endl;
+                                                }
+                                                cout<<"--------";
+                
+                 */
+
+
+
+
     
+
+
+
+
+
+
+
+
+
+    return 0;
 }
