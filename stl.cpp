@@ -3,6 +3,7 @@
 #include <list>
 #include <deque>
 #include <stack>
+#include <queue>
 using namespace std;
 
 
@@ -87,12 +88,42 @@ int main() {
                                                     cout<<endl;
                                                 }
                                                 cout<<"--------";
-                
-                 */
+                |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                *queue fifo first in first out
+                     queue<int> q;
+                        q.push(1); ==   -------------
+                        q.push(2); ==   | 1 | 2 | 3 | it will add the vlue like {1} - {1,2} - {1,2,3} and remove {1,2,3} - {2,3} - {3}
+                        q.push(3); ==   -------------
+                        queue<int> q2;
+                        q2.push(11); == ----------------
+                        q2.push(22); == | 11 | 22 | 33 |  swap it q = {11,22,33} q2 = {1,2,3}
+                        q2.push(33); == ----------------
+                        q.swap(q2);
+
+
+                        while(!q.empty()){
+                            cout<<q.front();
+                            q.pop();
+                        }
+                                    */
 
 
 
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    queue<int> q2;
+    q2.push(11);
+    q2.push(22);
+    q2.push(33);
+    q.swap(q2);
 
+
+    while(!q2.empty()){
+        cout<<q2.front();
+        q2.pop();
+    }
     
 
 
