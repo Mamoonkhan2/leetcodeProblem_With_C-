@@ -1,14 +1,22 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <list>
 #include <deque>
 #include <stack>
+#include <map>
 #include <queue>
+#include <set>
+#include <unordered_map>
 using namespace std;
 
 
 int main() {
-    /* (vector) -> is the stl template libray contaner use as the dynamic array so that we can change it size and capacity at run time
+    /*
+        ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||||||
+        |||||||*FAZI*||||||||||||M|||||A|||||M|||||O||||O|||N||||||R||E||P|O|-|||-|S||T||L||||||||||||||||||||||||||||
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        (vector) -> is the stl template libray contaner use as the dynamic array so that we can change it size and capacity at run time
         (push_back) --> to add the value like pb(1) --> {1} pb(2) --> {1,2}
         (pop_back)  --> it will remove the last element of the vector also it will not effect the capacity only the size or remove only the value not the capacity of the vector
         (size)      --> is the value a vector fill now like {1,2,3,4} s = 4
@@ -34,9 +42,11 @@ int main() {
         (reverse_iterator)  --> vector <int>::reverse_iterator it; is use for reverseing vector
         (rbegin)   --> is the last element index {1,2,3,4} = 4
         (rend)     --> is the garbge value {rend{1,2,3,4}end} that why we use end - 1
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         (list)     --> it is dously linked array like we can add the element in the front/back also can remove the element from the front and back
                        list   <int> arrl = {1,2,3,4}; so it mean we will have the front function for at as will as start
                        also it is not allow random accec in array 
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         (deque)    --> is known as double ended que is as like list can form functoin for front and back it is allow random acces d[2]
         {{{{
             we can also use this methood 
@@ -47,6 +57,7 @@ int main() {
             for (auto it = arr.rbegin();it!=arr.rend(); it++)
             for (auto it = arr.begin() ;it!=arr.end() ; it++)
         }}}}
+        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         (pair)  --> is use for to stor the pair or double values in can be char or integers 
             pair  p = {1,'a'};                         normal
             pair<int,int> p = {1,2};                   normal wiht insealizer
@@ -64,9 +75,9 @@ int main() {
             }
             *******************************************************
                 vp.push_back({4,4}); // it will acceume that we will first make the pair then it will push back it in the vector
-                vp.emplace_back(5,5);// it will in-place the object or automaticaly create teh pair and then push it in the back of vector
+                vp.emplace_back(5,5);// it will in-place the object or automaticaly create the pair and then push it in the back of vector
 
-            &&&&&&&&&&&&&&&&&&&&&&&
+            |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
             non sequancial container
             *stack* lifo last in fist outf
             it store the value in the stack form it add the value in the last and first remove the last value 
@@ -88,7 +99,7 @@ int main() {
                                                     cout<<endl;
                                                 }
                                                 cout<<"--------";
-                |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
                 *queue fifo first in first out
                      queue<int> q;
                         q.push(1); ==   -------------
@@ -105,34 +116,103 @@ int main() {
                             cout<<q.front();
                             q.pop();
                         }
-                                    */
-
-
-
-    queue<int> q;
-    q.push(1);
-    q.push(2);
-    q.push(3);
-    queue<int> q2;
-    q2.push(11);
-    q2.push(22);
-    q2.push(33);
-    q.swap(q2);
-
-
-    while(!q2.empty()){
-        cout<<q2.front();
-        q2.pop();
-    }
+                        |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                               ^
+                        priority queue largest |
+                            priority_queue<int> pq;                          --> it is the default one which use maxheap largest first in tree struct
+                            priority_queue<int,vector<int>,greater<int>> pq; --> it will reverse the order from max heap minheap like lower first in tree struct
+                            pq.push(5);    //   | 10 | it use the max heap property so the greatest will always on
+                            pq.push(10);   //   | 5  | the top of the stack or array and the lowest will always on
+                            pq.push(4);    //   | 4  | the bottom also it like a tree structure    /\
+                            pq.push(3);    //   | 3  |                                            //\\
+                            while(!pq.empty()){
+                                    cout<<pq.top();  top will show the value it the top or most priority value
+                                    pq.pop();        it will delete the last value which wil be the largest of the stack
+                                }
+                        ||||||||||||||||||||||||||||||||||||||||||||||||sorted||||||uniqe|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                        map<string,int> m;
+                        m["akbare hussain"] = 426 ; | it store the value in key value pair 
+                        m["mamoon"]         = 436 ; | it store it in sort ascending order or lexicographcally form
+                        m["saim"]           = 359 ; | map<key,value>
+                        m["rayan"]          = 230 ; | 
+                        m["mamoon"]                 | we can use this methood to show the value by it key
+                        m.emplace("haroon",55);  O(logn)    | it will add the new key value pair
+                        m.insert({"hzroon",56}); O(logn)
+                        m.erase("amin")   O(logn)   | it will delete the value with the key
+                        pair<string,int> p = {"mamoon",m["mamoon"]};  | it will store the value in the pair --> {"mamoon",436}
+                        for(pair<string,int> it:m)    | we can itrerate through the for each loop
+                        {
+                            cout<<it.first<<" "<<it.second <<endl;
+                        }
+                        for(map<string,int>::iterator it=m.begin();it!=m.end();it++ ){  | we can also use the iterator to show the value in the key value form
+                            cout<<it->first<<" "<<it->second<<endl;
+                        }
+                        |||||||||||||||||||||||||||||||||||||||||||||||||||||sorted|||||||notuniqe|||||||||||||||||||||||||||||||||||||||||||||||||
+                        multi map it is like a map but we can make a duplicate value also store in sorted form
+                            multimap<string,int> m;
     
+                        m.emplace("haroon",55);  | sort the data in ascending order lexographically O(logn)
+                        m.emplace("haroon",55);  | can make a duplicate a multi duplicate  O(logn)
+                        m.emplace("haroon",55);  | can't use the the m.["key"] = value instead we use  O(logn)
+                        m.emplace("haroon",55);  | m.emplace(key,value) or m.insert({key,value})  O(logn)
+                        m.insert({"hzroon",56}); |   O(logn)
+                        m.erase("haroon");       | if we use the erase it will find the key at that name it will delete it all O(logn)
+                        m.erase(m.find("haroon"))| but when we use the find iterator it will give the specific memory address of the key and only delete one
+                        for(pair<string,int> p:m){
+                            cout<<p.first<<" "<<p.second<<endl;
+                        }
+                        cout<<m.count("amin")<<endl;
+                        for(multimap<string,int>::iterator mi=m.begin(); mi!=m.end();mi++){
+                            cout<<mi->first<<" "<<mi->second<<endl;
+                        }
+                        ||||||||||||||||||||||||||||||||||||||||||||random||||||unique|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                        unordered_map<string,int> m; | it store the value or the data in random order 
+                        m["z"] = 55;
+                        m.insert({"a",56}); O(1)
+                        m.emplace("d",55);  O(1)
+                        m.emplace("s",55);  O(1)
+                        m.emplace("g",5);   O(1)
+                        m.emplace("b",55);  O(1)
+                        for(pair<string,int> p:m){
+                            cout<<p.first<<" "<<p.second<<endl;
+                        }
+                        for(unordered_map<string,int>::iterator mi=m.begin(); mi!=m.end();mi++){
+                            cout<<mi->first<<" "<<mi->second<<endl;
+                        }
+                    ||||||||||||||||||||||||||||||SET|||||||||||||||||||||||||||UNIQUE|||||||||||||||||||||||||||||||||||||
+                    set<int> s;  
+                    s.insert(1);  O(logn)
+                    s.insert(2);            tree like structure like map
+                    s.insert(3);                /\
+                    s.insert(4);               //\\
+                    s.insert(5);              ///\\\
+                    s.insert(6);             ////\\\\
+                    s.insert(4);            /////\\\\\
+                    for(int p:s){          //////\\\\\\
+                        cout<<p;
+                    }
+                *(lower_bound(key))  --> data will equal to the key or greater
+                *(upper_bound(key))  --> data will greater then the key not equal
+            ||||||||||||||ALGORITHMS|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+            sort(arr,arr+n) --> arr is the arr pointer and arr+n is the end point {{1start,2,3,4}endpoint} 
+            sort(arr,arr+5,greater<int>());  -> sort in decending or decreasing order
+            sort(arr.begin(),arr.end()) --> for vector
+            sort(arr.begin(),arr.end(),greater<int>()) --> reverse vector
 
 
 
 
-
-
-
-
-
+*/
+    vector<pair<int,int>> arr = {{2,1},{3,2},{5,2},{1,2},{8,3}};
+    // sort(arr.begin(),arr.end());
+    for(pair<int,int> p:arr){
+        if(p.first>p.second){
+            swap(p.second,p.first);
+        }
+    }
+    sort(arr.begin(),arr.end());
+    for(auto p:arr){
+        cout<<p.first<<" "<<p.second<<endl;
+    }
     return 0;
 }
