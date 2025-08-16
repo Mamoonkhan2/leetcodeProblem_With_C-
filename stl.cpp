@@ -9,8 +9,7 @@
 #include <set>
 #include <unordered_map>
 using namespace std;
-
-
+bool Compariter(pair<int,int> a, pair<int,int> b);
 int main() {
     /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -198,21 +197,38 @@ int main() {
             sort(arr,arr+5,greater<int>());  -> sort in decending or decreasing order
             sort(arr.begin(),arr.end()) --> for vector
             sort(arr.begin(),arr.end(),greater<int>()) --> reverse vector
+            makeing the pair sorted 
+            in this code we are first makeing the inside pair value in accending order or sort then we are compairing the the pair.first with all and sorting it
+            vector<pair<int,int>> arr = {{2,1},{3,-1},{5,3},{1,2},{8,3}};
+            for(vector<pair<int,int>>::iterator it = arr.begin();it!=arr.end();it++){
+                if(it->first>it->second){
+                    swap(it->second,it->first);
+                }
+            }
+            ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||    
+            we can also make the custom compariter function to sort the pair in the vector
+            bool Compariter(pair<int,int> a, pair<int,int> b){
+                if(a.second < b.second){
+                    return true;  }
+                    else return false;  // it will sort the pair in accending order of the second value
 
-
-
+             sort(arr.begin(),arr.end(),Compariter);
 
 */
-    vector<pair<int,int>> arr = {{2,1},{3,2},{5,2},{1,2},{8,3}};
-    // sort(arr.begin(),arr.end());
-    for(pair<int,int> p:arr){
-        if(p.first>p.second){
-            swap(p.second,p.first);
-        }
-    }
-    sort(arr.begin(),arr.end());
+
+    vector<pair<int,int>> arr = {{2,2},{3,1},{5,1},{1,1},{8,1}};
+
+
+    sort(arr.begin(),arr.end(),Compariter);
     for(auto p:arr){
         cout<<p.first<<" "<<p.second<<endl;
     }
     return 0;
+}
+bool Compariter(pair<int,int> a, pair<int,int> b){
+    if(a.second > b.second) return false;
+    if(a.second < b.second) return true;
+    if(a.first > b.first) return false;
+    if(a.first < b.first) return true;
+    return false;
 }
