@@ -5,14 +5,11 @@
 #include <algorithm>
 #include <cstring>      
 using namespace std;
-int n = 5;
-int x=0;
-string name = "hello";
-char names[12] = "hello world";
-int arr[5] = {1,2,3,4,5};
-int arrs = sizeof(arr) / sizeof(arr[0]);
 bool exist(int arr[],int n,int value);
-
+void change(int* n){
+    *n = 99;
+    cout<<*n<<endl;
+};
 int main() {
     /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||
@@ -50,7 +47,89 @@ int main() {
     //     }
     // }
     // FindTheUniqueofArry
+    // vector <int> arr = {1,2,3,4,1,2,3};
+    // sort(arr.begin(), arr.end());
+    // for (int i = 0; i < arr.size(); i++) {
+        //     int freq = 0;
+        //     for (int J = 0; J < n; J++) {
+            //         if(arr[i] == arr[J]){
+                //             freq++;
+                //         }
+    //         else if(freq == 1|| (arr[i] != arr[i-1] && arr[i] != arr[i+1])){
+    //             cout<<arr[i];
+    //             break;
+    //         }
+    //         else{
+    //             freq = 0;
+    //         }
+        
+    //     }        
+        
+    //     }
+    // for (int i = 1; i < arr.size(); i++) {
+    //     if((arr[i] != arr[i-1])&&(arr[i] !=arr[i+1])){
+    //         cout<<arr[i]<<" ";
+    //     }
+    // }
+    // FindForSingleNumber
+    // vector <int> arr= {1,2,3,5,2,3,1};
+    // int ans= 0;
+    // for (int i = 0; i < arr.size(); i++) {
+    //     ans^=arr[i];
+    // }
+    // cout<<ans;
+    // SumOfDigit(111);
+    // int count = 111;
+    // int current = 0;
+    // while (count!=0)
+    // {
+    //     current += count%10;
+    //     count /=10;
+        
+    // }
+    // cout<<current;
+    // DecimalToBinary
+    // int n = 5;
+    // int ans = 0,pows = 1;
+    // while(n!=0){
+    //     int current = n%2;
+    //     n /=2;
+    //     ans += (current*pows);
+    //     pows*=10;
+
+
+    // }
+    // // 101 binary to decimal
+    // int anss = 0,powss= 1;
+    // while(ans!=0){
+    //     int LDigit = ans%10;
+    //     ans/=10;
+    //     anss+= LDigit*powss;
+    //     powss*=2;
+    // }
+    // cout<<anss;
+    // find that a value is power of 2 or not
+    // int n = 5;
+    // if(n&(n-1) == 0){
+    //      cout<<"it is power of n";
+    // }
+    // else{
+    //     cout<<"it is not power of 2";
+    // }
+    // pointers 
+    // int a = 4;
+    // int *p = &a;
+    // int **pp = &p;
+    // int *null = NULL;
+    // cout<<null;
+    // int a[5] = {1,2,3,4,5};
+    // for (int i = 0; i < 5; (*a)++,i++) {
+    //     cout<<*a;
     
+    // }
+    // exeptforindexproductofall
+    
+   
     return 0;
 }
 bool exist(int arr[],int n,int value)
