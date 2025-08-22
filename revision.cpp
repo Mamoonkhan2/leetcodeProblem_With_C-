@@ -5,11 +5,7 @@
 #include <algorithm>
 #include <cstring>      
 using namespace std;
-bool exist(int arr[],int n,int value);
-void change(int* n){
-    *n = 99;
-    cout<<*n<<endl;
-};
+
 int main() {
     /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||
@@ -96,9 +92,8 @@ int main() {
     //     n /=2;
     //     ans += (current*pows);
     //     pows*=10;
-
-
     // }
+    
     // // 101 binary to decimal
     // int anss = 0,powss= 1;
     // while(ans!=0){
@@ -116,6 +111,7 @@ int main() {
     // else{
     //     cout<<"it is not power of 2";
     // }
+    
     // pointers 
     // int a = 4;
     // int *p = &a;
@@ -127,21 +123,53 @@ int main() {
     //     cout<<*a;
     
     // }
-    // exeptforindexproductofall
+     // exeptforindexproductofall
+    // brute force apporach
+    // vector <int> vec = {1,2,3,4};
+    // int n = vec.size();
+    // for (int i = 0; i < n; i++) {
+    //     int f = 1;
+    //     for (int j = 0; j < n; j++) {
+    //         if(i!=j){
+    //             // cout<<i<<endl;
+    //             f *= vec[j] ;
+    //         }
+    //     }
+    //     cout<<f;
+    // }
+    // optimize way
+    // vector <int> arr = {1,2,3,4};
+    // vector <int> ans(arr.size(),1);
+    // int prefix = 1 ;
+    // int suffix = 1 ;
+    // for (int i = 1; i < arr.size(); i++) {
+    //     prefix *= arr[i-1];
+    //     ans[i] *= prefix;
+    // }
+    // for (int i = arr.size()-2; i >= 0; i--) {
+    //     suffix *= arr[i+1];
+    //     ans[i] *= suffix;
+    // }
     
-   
-    return 0;
-}
-bool exist(int arr[],int n,int value)
-{
-    for (int i = 0; i <n; i++)
-    {
-        /* code */
-        if (arr[i] == value)
-        {
-            return true;
+    // for (int i = 0; i < arr.size(); i++) {
+        
+    //     cout<<ans[i];
+    // }
+    // MaxWaterinthecontaner
+    vector <int> height = {1,2,3,4,5};
+    int maxwater = 0;
+    for (int i = 0; i < height.size(); i++) {
+        int w =0;
+        int h =0;
+        int area = 0;
+        for (int j = i+1; j < height.size(); j++) {
+            w = j-i;
+            h = min(height[i],height[j]);
+            area = w*h;
+            maxwater= max(maxwater,area); 
         }
-    }
-    return false;
     
+    }
+    cout<<maxwater;
+    return 0;
 }

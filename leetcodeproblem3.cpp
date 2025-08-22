@@ -41,7 +41,7 @@ int MaxWatertwopointerApproach(vector <int> h){
 }    
 
 int main(){
-    vector <int> h = {1,8,6,2,5,4,8,3,7};
+    vector <int> h = {1,2,3,4,5};
     cout<<MaxWatertwopointerApproach(h);
     return 0;
 }

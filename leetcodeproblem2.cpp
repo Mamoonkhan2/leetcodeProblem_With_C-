@@ -26,6 +26,7 @@ vector <int> optimize(vector<int>&nums){
     for (int i = 1; i < n; i++) {
         prefix *= nums[i-1];
         ans[i] *= prefix;
+        cout<<ans[i]<<endl;
     }
     for (int i = n-2; i>=0 ; i--) {
         suffix *= nums[i+1];
@@ -35,8 +36,6 @@ vector <int> optimize(vector<int>&nums){
 }
 int main(){
     vector <int> nums ={1,2,3,4};
-    vector <int> vec = optimize(nums);
-    for(int i : vec){
-        cout<<i;
-    }
+     optimize(nums);
+
 }
