@@ -4,6 +4,7 @@
 #include <algorithm>
 
 using namespace std;
+// normal binarysearchalgotrithms
 int binarysearchalgo(vector <int> &arr,int T){
     int n = arr.size();
     int st = 0;
@@ -23,6 +24,7 @@ int binarysearchalgo(vector <int> &arr,int T){
     }
     return -1;
 }
+
 // rotated sorted array 
 int rotatedsorted(vector <int> &arr,int t ){
     int st = 0;//5//0
@@ -53,6 +55,8 @@ int rotatedsorted(vector <int> &arr,int t ){
     }
     return -1;   
 }
+
+// peak element problem
 // ans peak ealement will never be the first and the last of the array or vector and the secound point is that the array will be like the mountaines going in the asecending order and backing in the decending order
 int peakelementofarrayMIne(vector<int>&arr){
     int n = arr.size()-1;
@@ -74,6 +78,7 @@ int peakelementofarrayMIne(vector<int>&arr){
         return peakE;
 }
 
+// book allocation problem
 // finding the single element in the array mean that every element will have pair execpt one element;
 int findingsingleelementinsortedarray(vector <int> &arr){
     int st = 0;
@@ -201,6 +206,7 @@ int minTime(vector<int> block,int painter){
 
 }
 
+// the aggrasive cow problem
 // finding the minum distance in the maximum of the cow stall that the cow will far away from each other so that they don't fight
 bool isCow(vector <int> stall,int cow,int allowedmidistance){// this is to find that in how many distance the cow will not fight 
     int cows = 1; // we will place the first cow on first distance;
