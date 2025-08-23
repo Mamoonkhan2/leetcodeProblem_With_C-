@@ -250,6 +250,30 @@ int main() {
     //     n/=2;
     // }
     // cout<<ans;
- 
+    // bestDaytosell1
+    // brut force approach of it
+    vector <int> stock = {4,2,3,1,3};// best price is 2
+    // int maxprofit = 0;
+    // for (int i = 0; i < stock.size(); i++) {
+    //     int bestbuy = stock[i];
+    //     int currentday = stock[i];
+    //     int currentprofit = 0;
+    //     for (int j = i; j < stock.size(); j++) {
+    //         bestbuy = max(bestbuy,stock[j]);// it will find the best day or the higher day to sell the stock it
+    //         currentprofit = bestbuy - currentday;// it will then minus the higher from the low to give us the profit
+    //         maxprofit = max(maxprofit,currentprofit); 
+    //     }
+    // }
+    // cout<<maxprofit;
+    // opptimize of it 
+    // int minsofor = stock[0];
+    // int maxprofit = 0;
+    // for (int i = 0; i < stock.size(); i++) {
+    //     minsofor = min(minsofor,stock[i]);
+    //     int profit = stock[i] - minsofor;
+    //     maxprofit = max(maxprofit,profit);
+    // }
+    // cout<<maxprofit;
+    
     return 0;
 }
