@@ -5,7 +5,14 @@
 #include <algorithm>
 #include <cstring>      
 using namespace std;
-
+void printVector(vector<int> nums)
+{
+    for(int Value:nums)
+    {
+        cout<<Value;
+    }
+    cout<<endl;
+}
 int main() {
     /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||
@@ -30,7 +37,7 @@ int main() {
     // int bs = sizeof(b) / sizeof(b[0]);
     // for (int i = 0; i < as; i++) {
     //     for (int j = 0; j < bs; j++) {
-    //         if(exist(b,bs,a[i])){
+    //         if(ezist(b,bs,a[i])){
     //             cout<<"intersection from perspective of a : "<<i<<endl;
     //             break;
     //         }
@@ -39,7 +46,7 @@ int main() {
     // }
     // for (int i = 0; i < arrs; i++) {
     //     if(arr[i] == n){
-    //         cout<<"find the value is on indx : "<<i;
+    //         cout<<"find the value is on indz : "<<i;
     //     }
     // }
     // FindTheUniqueofArry
@@ -156,20 +163,93 @@ int main() {
     //     cout<<ans[i];
     // }
     // MaxWaterinthecontaner
-    vector <int> height = {1,2,3,4,5};
-    int maxwater = 0;
-    for (int i = 0; i < height.size(); i++) {
-        int w =0;
-        int h =0;
-        int area = 0;
-        for (int j = i+1; j < height.size(); j++) {
-            w = j-i;
-            h = min(height[i],height[j]);
-            area = w*h;
-            maxwater= max(maxwater,area); 
-        }
+    // int maxwater = 0;
+    // for (int i = 0; i < height.size(); i++) {
+        //     int w =0;
+        //     int h =0;
+        //     int area = 0;
+        //     for (int j = i+1; j < height.size(); j++) {
+            //         w = j-i;
+            //         h = min(height[i],height[j]);
+            //         area = w*h;
+            //         maxwater= max(maxwater,area); 
+            //     }
+            
+            // }
+            // MaxWatertwopointerApproach
+    // vector <int> height = {1,2,8,4,5};
+    // int h = height.size();
+    // int i =0;
+    // int j =h-1;
+    // int maxwater = 0;
+    // while(i<j){
+    //     int width = j-i;
+    //     int h = min(height[i],height[j]);
+    //     int area = width * h;
+    //     maxwater = max(maxwater,area);
+    //     if(height[i]<height[j]){
+    //         i++;
+    //     }else{
+    //         j--;
+    //     }
+    // }
+    // cout<<maxwater;
+    // vector <int> arr = {1,2,3,4,5};
+    // int n = arr.size();
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = i; j < n; j++) {
+    //         for (int k = j; k < n; k++) {
+    //             cout<<arr[k];
+            
+    //         }
+    //         cout<<" ";
+            
+    //     }
+    //     cout<<endl;
     
-    }
-    cout<<maxwater;
+    // }
+    //subarraysum
+    // vector <int> arr = {2,-2,-2,2,2};
+    // int n = arr.size();
+    // int currentsum = 0;
+    // int maxs=-34344;
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = i; j < n; j++) {
+    //         currentsum+=arr[j];
+    //     }
+    //     maxs = max(maxs,currentsum);    
+    // }
+    // cout<<maxs;
+    // more algorithms
+    // for (int i = 0; i < arr.size(); i++) {
+    //     currentsum += arr[i];
+    //     if(currentsum<0){
+    //         currentsum = 0;
+    //     }
+    
+    // }
+    // cout<<currentsum;
+    //  pow(x,n) // brute force approach
+//    long int z = 3;
+//     int a = 5;
+//     long int ans = 1;
+//     for (int i = 0; i < a; i++) {
+//         ans *= z;
+
+//     }
+    // optimize approach
+    // int x = 3;
+    // int n = 5;
+    // long int ans = 1;
+    // while (n!=0)
+    // {
+    //     if(n%2 == 1){
+    //         ans *= x;
+    //     }
+    //     x *= x;
+    //     n/=2;
+    // }
+    // cout<<ans;
+ 
     return 0;
 }
