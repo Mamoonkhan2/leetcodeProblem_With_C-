@@ -31,7 +31,7 @@ int main() {
     // }
     // cout << "it is a prime number" << endl;
     // finding the intersection of the two arrays
-    // int a[] = {1, 2, 3, 4, 5};
+    // int a[] = {, 2, 3, 4, 5};
     // int b[] = {3, 4, 5, 6, 7};
     // int as = sizeof(a) / sizeof(a[0]);
     // int bs = sizeof(b) / sizeof(b[0]);
@@ -252,7 +252,7 @@ int main() {
     // cout<<ans;
     // bestDaytosell1
     // brut force approach of it
-    vector <int> stock = {4,2,3,1,3};// best price is 2
+    // vector <int> stock = {4,2,3,1,3};// best price is 2
     // int maxprofit = 0;
     // for (int i = 0; i < stock.size(); i++) {
     //     int bestbuy = stock[i];
@@ -274,6 +274,105 @@ int main() {
     //     maxprofit = max(maxprofit,profit);
     // }
     // cout<<maxprofit;
-    
+    // binary search algorithm
+    // vector <int> arr = {1,2,3,4,5,6,7,8,9,10};
+    // int t = 8;
+    // int st = 0;
+    // int end = arr.size();
+    // while (st<=end)
+    // {   
+    //     int mid = (st + end)/2;
+    //     if (arr[mid]==t){
+    //         cout<<mid;
+    //         break;
+    //     } 
+    //     else if(t>arr[mid]){
+    //         st = mid +1;
+    //     }else
+    //     {
+    //         end = mid -1;
+    //     }
+    // }
+    // rotated sorted array1
+    // vector <int> vec = {3,4,5,6,0,1,2};
+    // int st = 0;
+    // int end = vec.size();
+    // int t = 0;
+    // while(st<=end){
+    //     int mid = st +(end-st)/2;
+    //     // cout<<mid;
+    //     if(vec[mid] == t){
+    //     cout<<mid<<endl;
+    //     break;    
+    //     }
+    //     else if(vec[st]<=vec[mid])//left sorted
+    //     {
+    //        if(vec[st]<=t&&vec[mid]>=t){
+    //             end  = mid - 1;
+    //        } 
+    //        else{
+    //             st = mid +1;
+    //        }
+    //     }
+    //     else
+    //     {
+    //         // vector <int> vec = {3,4,5,{6},0,1,2};
+    //         if(vec[mid]>=t&&vec[end]>=t){
+    //             st = mid+1;
+    //         }
+    //         {
+    //             end = mid - 1;
+    //         }
+    //     }  
+    // }
+    // peak element
+    vector<int>m={1,2,3,4,8,2,1};
+   /*       8
+           //\\
+   */ 
+    // int st  = 0;
+    // int end = m.size();
+    // while(st<=end){
+    //     int mid = (st + end)/2;
+    //     if(m[mid]>m[mid+1]&&m[mid]>m[mid-1]){
+    //         cout<<mid;
+    //         break;
+    //     }
+    //     // {1,2,3,{4},8,2,1}
+    //     else if(m[mid]>m[mid-1])//increasing
+    //     {       
+    //         st = mid + 1;
+    //     }
+    //     else
+    //     {
+    //         end = mid -1;
+    //     }
+    // }
+    vector <int> arr={1,1,1,1,2,2,3,2,2};
+    int st = 0;
+    int end = arr.size()	;
+    while (st<=end)
+    {
+        int mid = st + (end - st )/2;
+        if(arr[mid]!=arr[mid -1]&&arr[mid]!=arr[mid+1]){
+            cout<<mid;
+            break;
+        }
+        if(mid%2 == 0){//it is even
+            if(arr[mid] == arr[mid-1]){
+                end = mid-1;
+            }
+            else{
+                st = mid +1;
+            }
+        }
+        else{// odd
+           if(arr[mid] == arr[mid -1]){
+            st = mid+1;
+           }else{
+            end = mid-1;
+           }
+        }
+    }
     return 0;
 }
