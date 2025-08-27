@@ -476,6 +476,85 @@ int main() {
     //     swap(arr[previous+1],unsorted);
     // }
     // sort 0,1,2 brute force
+    // int z = 0;
+    // int o = 0;
+    // int t = 0;
+    
+    // for (int i = 0; i < arr.size(); i++) {
+        //     if(arr[i] == 0){
+            //         z++;
+            //     }
+            //     else if(arr[i] == 1){
+                //         o++;
+                //     }
+                //     else{
+                    //         t++;
+                    //     }
+                    
+                    
+                    // }
+                    // cout<<z<<endl;
+                    // int i = 0;
+                    // while (i!=arr.size())
+                    // {
+                        //     if(z!=0){
+                            //         arr[i++] = 0;
+                            //         z--;
+                            //     }
+                            //     else if (o!=0){
+                                //         arr[i++] = 1;
+                                //         o--;
+                                //     }else{
+                                    //         arr[i++] = 2;
+                                    //         t--;
+                                    //     }
+                                    // }
+    // vector <int> arr = {0,1,2,0};
+    // int low = 0;
+    // int mid = 0;
+    // int high = arr.size()-1;
+    // while(mid <= high){
+    //     if(arr[mid] == 0){
+    //         swap(arr[low],arr[mid]);
+    //         low++;
+    //         mid++;
+    //     }
+    //     else if(arr[mid]==1)
+    //     {
+    //         mid++;
+    //     }
+    //     else if(arr[mid]==2){
+    //         swap(arr[high],arr[mid]);
+    //         high--;
+    //     }
+    // }
+    // next permutation 
+    // vector <int> arr = {5,1,4,3,2};
+    // int pivit = -1;
+    // int n = arr.size();
+    // for (int i = n-2; i > 0; i--) {
+    //     if(arr[i]<arr[i+1]){
+    //         pivit = i;
+    //         break;
+    //     }
+        
+    // }
+    // for(int i = n-1;i>pivit;i--){
+    //     if(arr[i]>arr[pivit]){
+    //         swap(arr[i],arr[pivit]);
+    //         break;
+    //     }
+    // }
+    // int i = pivit +1;
+    // int j = n-1;
+    // while (i<j)
+    // {
+    //     if(arr[i]>arr[j])
+    //     {
+    //         swap(arr[i++],arr[j--]);
+    //     }
+    // }
+    
     for(int i:arr){
         cout<<i;
     }
