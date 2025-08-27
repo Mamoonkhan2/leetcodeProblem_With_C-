@@ -10,8 +10,7 @@
 #include <unordered_map>
 using namespace std;
 bool Compariter(pair<int,int> a, pair<int,int> b);
-int main() {
-    /*
+ /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||||||
         |||||||*FAZI*||||||||||||M|||||A|||||M|||||O||||O|||N||||||R||E||P|O|-|||-|S||T||L||||||||||||||||||||||||||||
         |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -216,19 +215,16 @@ int main() {
 
 */
 
-    vector<pair<int,int>> arr = {{2,2},{3,1},{5,1},{1,1},{8,1}};
-
-
-    sort(arr.begin(),arr.end(),Compariter);
-    for(auto p:arr){
-        cout<<p.first<<" "<<p.second<<endl;
+int main() {
+    map<string,int> names;
+    names.emplace("haroozzn",23);
+    names.emplace("harocsvn",23);
+    names.emplace("haroaasn",23);
+    names.emplace("haroassn",23);
+    names.emplace("haroason",23);
+    names.emplace("haadsfon",23);
+    for(map<string,int>::iterator it =names.begin();it!=names.end();it++){
+        cout<<it->first<<" : "<<it->second<<endl;
     }
     return 0;
-}
-bool Compariter(pair<int,int> a, pair<int,int> b){
-    if(a.second > b.second) return false;
-    if(a.second < b.second) return true;
-    if(a.first > b.first) return false;
-    if(a.first < b.first) return true;
-    return false;
 }
