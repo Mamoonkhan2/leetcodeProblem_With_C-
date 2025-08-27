@@ -3,8 +3,9 @@
 #include <cmath>
 #include <string>
 #include <algorithm>
-#include <cstring>      
+#include <cstring>
 using namespace std;
+bool isCow(vector <int> stall,int cow,int allowedmidistance);
 void printVector(vector<int> nums)
 {
     for(int Value:nums)
@@ -13,6 +14,21 @@ void printVector(vector<int> nums)
     }
     cout<<endl;
 }
+bool student(vector <int> vec,int allowed,int student){
+    int ss = 1;
+    // 2,1,3,4,5,6
+    int sum = 0;
+    for (int i = 0; i < vec.size(); i++) {
+        if(sum+vec[i]>allowed){
+            sum = vec[i];
+            ss++;
+        }else{
+            sum += vec[i];
+        }
+    }
+    return ss!=student?false:true;
+}
+bool canprint(vector <int> vec,int allowedtime,int painters);
 int main() {
     /*
         ||||||||||||||||||||||||||||2||0||2||5||||T||U||E|||A||U||G||||||||||||||||||||||||||||||||||||||||||||||
@@ -65,7 +81,6 @@ int main() {
     //         else{
     //             freq = 0;
     //         }
-        
     //     }        
         
     //     }
@@ -326,7 +341,7 @@ int main() {
     //     }  
     // }
     // peak element
-    vector<int>m={1,2,3,4,8,2,1};
+    // vector<int>m={1,2,3,4,8,2,1};
    /*       8
            //\\
    */ 
@@ -348,31 +363,146 @@ int main() {
     //         end = mid -1;
     //     }
     // }
-    vector <int> arr={1,1,1,1,2,2,3,2,2};
-    int st = 0;
-    int end = arr.size()	;
-    while (st<=end)
-    {
-        int mid = st + (end - st )/2;
-        if(arr[mid]!=arr[mid -1]&&arr[mid]!=arr[mid+1]){
-            cout<<mid;
-            break;
-        }
-        if(mid%2 == 0){//it is even
-            if(arr[mid] == arr[mid-1]){
-                end = mid-1;
-            }
-            else{
-                st = mid +1;
-            }
-        }
-        else{// odd
-           if(arr[mid] == arr[mid -1]){
-            st = mid+1;
-           }else{
-            end = mid-1;
-           }
-        }
+    // vector <int> arr={2,1,3,4,5,6};
+    // int st = 0;
+    // int end = arr.size()	;
+    // while (st<=end)
+    // {
+    //     int mid = st + (end - st )/2;
+    //     if(arr[mid]!=arr[mid -1]&&arr[mid]!=arr[mid+1]){
+    //         cout<<mid;
+    //         break;
+    //     }
+    //     if(mid%2 == 0){//it is even
+    //         if(arr[mid] == arr[mid-1]){
+    //             end = mid-1;
+    //         }
+    //         else{
+    //             st = mid +1;
+    //         }
+    //     }
+    //     else{// odd
+    //        if(arr[mid] == arr[mid -1]){
+    //         st = mid+1;
+    //        }else{
+    //         end = mid-1;
+    //        }
+    //     }
+    // }
+    // book allocation problem 
+    // vector <int> book={2,1,3,4,5,6};
+    // int sum = 0;
+    // for(int i :book){
+    //     sum+=i;
+    // }
+    // int min = 0;
+    // int max = sum;
+    // int ans = 0;
+    // while(min<=max)
+    // {
+    //     int mid = (min + max )/2;
+    //     if(student(book,mid,3)){
+    //         ans = mid;
+    //         max = mid - 1;
+    //     }
+    //     else{
+    //         min = mid + 1;
+    //     }
+    // }
+    // cout<<ans<<" ans ";
+    // aggrasive cow problem
+    // vector <int> stall = {2,1,3,4,5,6};
+    // sort(stall.begin(),stall.end());
+    // int painter = 3;
+    // int sum = 0;
+    // for (int i = 0; i < stall.size(); i++) {
+    //     sum += stall[i];
+    // }
+    // int st = 0;
+    // int n = stall.size();
+    // int end =sum;
+    // int ans = 0;
+    // while (st<=end)
+    // {
+    //     int mid = (st + end )/2;
+    //     // cout<<mid<<" ";
+    //     if(canprint(stall,mid,3)){
+    //         ans = mid;
+    //         end = mid -1;
+    //     }
+    //     else{
+    //         st = mid +1;
+    //     }
+    // }
+    // cout<<ans;
+    //{5,3,4,2,1}
+    //{5,4,3,2,1}
+    // buble
+    // for (int i = 0; i < arr.size(); i++) {
+        
+    //     for (int j = 0; j < arr.size()-i-1; j++) {
+        //         if(arr[j]>arr[j+1])
+        //         {
+            //             swap(arr[j],arr[j+1]);
+            //         }
+            //     }
+            
+            // }
+            
+            // insertion sort algorithms
+            
+            // for (int i = 0; i < arr.size(); i++) {
+                //     int small = i;
+                //     for (int j = i+1; j < arr.size(); j++) {
+                    //         if(arr[j]<arr[small]){
+                        //             small = j;
+                        //         }
+                        //     } 
+                        //     swap(arr[i],arr[small]);
+                        // }
+                        // salection sort algorithms
+    //                     vector <int> arr = {5,3,4,2,1};
+    //                     // 1,2,3,4,5
+    //                     //5,5,33,3,33
+    //                     int n = arr.size();
+    //                     for (int i = 1; i < n; i++)
+    //                     {
+    //                         int unsorted = arr[i];
+    //                         int previous = i - 1;
+    //                         while(previous>=0&&arr[previous]>unsorted){
+    //                             arr[previous+1] = arr[previous];
+    //                             previous --; 
+    //     }
+    //     swap(arr[previous+1],unsorted);
+    // }
+    // sort 0,1,2 brute force
+    for(int i:arr){
+        cout<<i;
     }
     return 0;
+}
+bool canprint(vector <int> vec,int cow,int painters)
+{
+    int cows = 1;
+    int time = vec[0];
+    for (int i = 1; i < vec.size(); i++) {
+        if(vec[i]-time>= cow){
+            cows++;
+            time = vec[i];
+        }
+    }
+    // cout<<cows;
+    return cows<=painters;
+}
+bool isCow(vector <int> stall,int cow,int allowedmidistance){// this is to find that in how many distance the cow will not fight 
+    int cows = 1; // we will place the first cow on first distance;
+    int stalldistace = stall[0];//from start we will place the first cow
+    for(int i =1;i<stall.size();i++){// now we will go from the starting distance to the ending to find the valid anser for the stall to place the cow that they don't fight
+        if(stall[i] - stalldistace >= allowedmidistance)//the condition will find teh distance is greater or equal to allowed distance if it is so then we will place the cow becase they will not fight at this distance
+        {
+            cows++;
+            stalldistace = stall[i];
+        }
+    }
+    return cows<=cow;//now we will se that the cows which we place in the feild are greater than the actual cow so then we will return false becase the allowed distance is larger we need low distance
 }
