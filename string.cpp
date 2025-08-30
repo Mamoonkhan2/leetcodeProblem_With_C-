@@ -4,7 +4,15 @@
 #include <string>
 #include <cctype>
 using namespace std;
-
+bool compare(int freq1[],int freq2[])
+{
+    for (int i = 0; i < 26; i++) {
+        if(freq2[i]!=freq1[i]){
+            return false;
+        }
+    }
+    return true;
+}
 bool hhhh(char c){
     if((c>=97)&&(c<=122))
     {
@@ -21,14 +29,14 @@ bool hhhh(int c){
     return false;
 }
 int main() {
-    string names = "$^%r&a##c&##!c&a#r*&(#)";
-    string part  = "##";
-    while (names.length()>0&&names.find(part)<names.length())
-    {
-        int j = names.find(part);
-        names.erase(j,part.length());
-    }
-    cout<<names;
+    // string names = "$^%r&a##c&##!c&a#r*&(#)";
+    // string part  = "##";
+    // while (names.length()>0&&names.find(part)<names.length())
+    // {
+    //     int j = names.find(part);
+    //     names.erase(j,part.length());
+    // }
+    // cout<<names;
     // int i = 0;
     // int j = names.length()-1;
     // bool yes = false;
@@ -57,6 +65,28 @@ int main() {
     // }
     // else{
     //     cout<<"not palendrom";
+    // }
+    // find permutation in string 
+    // string s1 = "ab";
+    // string s2 = "ldknvjasabfasdf";
+    // int arr[26] = {0};
+    // for (int i = 0; i < s1.length(); i++) {
+    //         arr[s1[i] - 'a']++;
+    // }
+    // int windowsize = s1.length();
+    // for (int i = 0; i < s2.length(); i++) {
+    //     int freqwindow[26] = {0};
+    //     int idx = i;
+    //     for (int j = 0; j < windowsize; j++) {
+    //         freqwindow[s2[idx++]-'a']++;
+    //     }
+    //     if(compare(arr,freqwindow)){
+    //         cout<<"true ";
+    //         break;
+    //     }
+    //     else{
+    //         cout<<i;
+    //     }        
     // }
     return 0;
 }
