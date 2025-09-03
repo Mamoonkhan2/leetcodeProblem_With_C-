@@ -3,6 +3,7 @@
 #include <cstring>
 #include <string>
 #include <cctype>
+#include <algorithm>
 using namespace std;
 bool compare(int freq1[],int freq2[])
 {
@@ -88,5 +89,22 @@ int main() {
     //         cout<<i;
     //     }        
     // }
+    string words = "   this is   are  asdf arr   ";
+    string ans = "";
+    int n = words.size();
+    reverse(words.begin(),words.end());
+    for (int i = 0; i < words.length(); i++) {
+        string rand ="";
+        while(i<words.length() && words[i]!=' '){
+            rand += words[i];
+            i++;
+        }
+        if(rand.length() > 0){
+            reverse(rand.begin(),rand.end());
+            ans += " " + rand;
+        }
+    }
+    ans.erase(ans.begin());
+    cout<<ans;
     return 0;
 }
