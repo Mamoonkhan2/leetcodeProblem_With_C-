@@ -65,7 +65,7 @@ double myPow(double x, int n) {
     }
     return ans;
        
-    }
+}
 int bestDaytosell1(vector <int> arr){
     int bestbuy = arr[0];
     int maxprofit = 0;
@@ -92,21 +92,23 @@ int updatedbestDaysell1(vector <int> arr){
     return profit;
 }
 int main(){
-    vector <int> arr = {7,1,5,3,6,4};
-    double x = 2;
-    int n = -3;
-    double ans =1;
-    if(n<0){
-        x=1/x;
-        n = -n;
-    }
-    while(n>0){
-        if(n%2 == 1){
-            ans *= x;
-        }
-        x*=x;
-        n/=2;
-    }
+    vector <int> arr = {4,2,3,1,3};
+    // double x = 2;
+    // int n = 3;
+    // double ans =1;
+    // if(n<0){
+    //     x=1/x;
+    //     n = -n;
+    // }
+    // while(n>0){
+    //     if(n%2 == 1){
+    //         ans *= x; 
+    //     }
+    //     x*=x;4
+    //     n/=2;
+    // }
+    int ans = updatedbestDaysell1(arr);
     cout<<ans;
+
     return 0;
 }

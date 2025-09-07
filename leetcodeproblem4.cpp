@@ -43,22 +43,23 @@ void MaximumOfSubArraySum(int arr[],int count)
 
 int main()
 {
-    int arr[6] = {3,-5,5,4,-7,9};
+    // int arr[6] = {3,-5,5,4,-7,9};
 
-    int maximum = -888888;
-    int curretsum =0;
-    for (int i = 0; i < 6; i++)
-    {
-        curretsum += arr[i];
-        maximum = max(curretsum,maximum);
-        if (curretsum < 0)
-        {
-            curretsum = 0;
-        }
+    // int maximum = -888888;
+    // int curretsum =0;
+    // for (int i = 0; i < 6; i++)
+    // {
+    //     curretsum += arr[i];
+    //     maximum = max(curretsum,maximum);
+    //     if (curretsum < 0)
+    //     {
+    //         curretsum = 0;
+    //     }
     
-    }
-    cout<<maximum;
-    MaximumOfSubArraySum(arr,6);
+    // }
+    // cout<<maximum;
+    int arr[5]={1,2,3,4,5};
+    PrintSubArray(arr,5);
 
 
 

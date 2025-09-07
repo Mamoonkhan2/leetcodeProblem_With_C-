@@ -99,7 +99,8 @@ void sort01s(vector<int> &arr){//this is the brute force approach to find the 0s
     }
 
 }
-//this is the detch national flag approach
+
+//detch national flag approach
 void dnf(vector <int> &arr){
     int low = 0,mid = 0,high = arr.size()-1;
     // {0,2,1,0,2,1,0,2,1}
@@ -124,6 +125,7 @@ void dnf(vector <int> &arr){
         cout<<i;
     }
 }
+
 //merging two array
 /*
 we have some conditoin here like when a --> 1,2,3 b --> 5,6,7 then it will merge will
@@ -163,6 +165,7 @@ void nextpermutation(vector <int> &arr){
             break;
         }
     }
+    cout<<pivit<<endl;
     if (pivit == -1) // this will mean that there is no pivit in the case 5,4,3,2,1 so just reverse it or it first permutation --> 1,2,3,4,5
     {
         int i = 0;
@@ -176,13 +179,14 @@ void nextpermutation(vector <int> &arr){
         for (int i = n-1; i > pivit; i--) {// now we have to find the greater value than pivit and swap it with the pivit
             if(arr[i]>arr[pivit]){
                 swap(arr[pivit],arr[i]);
+                cout<<arr[i]<<" ";
             }
         }
         // after finding the pivit and swap it we will have the decreasing part after the pivit now we will change that part to the increasing 
         // or reverse it after the pivit + 1
         int i = pivit+1;
         int j = n-1;
-        while(i<j){
+        while(i<=j){
             swap(arr[j--],arr[i++]);
         }
     }
@@ -193,7 +197,8 @@ void nextpermutation(vector <int> &arr){
 
 
 int main() {
-    vector <int> arr = {5,4,3,2,1};
+    vector <int> arr = {5,1,4,3,2};
+    nextpermutation(arr);
 
     return 0;
 }

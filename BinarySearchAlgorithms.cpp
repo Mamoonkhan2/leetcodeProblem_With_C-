@@ -68,7 +68,7 @@ int peakelementofarrayMIne(vector<int>&arr){
                 peakE = mid;
                 break;
             }
-            else if((arr[mid] > arr[mid-1])){//search in the we are in increasing order
+            else if((arr[mid] > arr[mid-1])){//search in the we are in increasing order2>1
                 st = mid+1;
             }
             else{// we arae in decreasing order arr[mid] < [mid -1] 8>7 //decreasing rawan eo alka was ba mong n ko mid
@@ -82,7 +82,7 @@ int peakelementofarrayMIne(vector<int>&arr){
 // finding the single element in the array mean that every element will have pair execpt one element;
 int findingsingleelementinsortedarray(vector <int> &arr){
     int st = 0;
-    int n = arr.size()-1;
+    int n = arr.size()-1;           
     int ans = 0;
     if(n == 1) return arr[0];
     while(st<=n){
@@ -114,6 +114,8 @@ int findingsingleelementinsortedarray(vector <int> &arr){
     return -1;
 }
 
+// modifiy version of binary search algorithms
+// book allocation problem
 bool student(vector <int> &books,int n,int k,int maxAllowedpages){
     int student = 1;
     int pages   = 0;
@@ -146,7 +148,6 @@ int allocatemaxpages(vector <int> &books,int k){
     while (mins<=maxs)
     {
         int mid = mins +(maxs-mins)/2;
-        cout<<mid<<endl;
         if(student(books,books.size(),k,mid))
         {
             
@@ -176,7 +177,7 @@ bool canPaint(vector <int> block,int k,int allowedTime){
             time+=block[i];
         }
     }
-    return paitners > k?false:true;
+    
 }
 
 int minTime(vector<int> block,int painter){
@@ -245,6 +246,8 @@ int StallCowSoNotFight(vector <int> &stall ,int cow){
     return ans;
 }
 int main() {
-
+    vector <int> book={2,1,3,4,5,6};
+    int ans =  allocatemaxpages(book,3);
+    cout<<ans;
     return 0;
 }

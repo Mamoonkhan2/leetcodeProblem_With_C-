@@ -41,7 +41,7 @@ int MaxWatertwopointerApproach(vector <int> h){
 }    
 
 int main(){
-    vector <int> h = {1,2,3,4,5};
-    cout<<MaxWatertwopointerApproach(h);
+    vector <int> h = {1,2,8,4,5};
+    cout<<MaxWaterinthecontaner(h);
     return 0;
 }

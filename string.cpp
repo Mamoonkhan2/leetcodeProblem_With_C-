@@ -89,22 +89,39 @@ int main() {
     //         cout<<i;
     //     }        
     // }
-    string words = "   this is   are  asdf arr   ";
-    string ans = "";
-    int n = words.size();
-    reverse(words.begin(),words.end());
-    for (int i = 0; i < words.length(); i++) {
-        string rand ="";
-        while(i<words.length() && words[i]!=' '){
-            rand += words[i];
-            i++;
+    // string words = "   this is   are  asdf arr   ";
+    // string ans = "";
+    // int n = words.size();
+    // reverse(words.begin(),words.end());
+    // for (int i = 0; i < words.length(); i++) {
+    //     string rand ="";
+    //     while(i<words.length() && words[i]!=' '){
+    //         rand += words[i];
+    //         i++;
+    //     }
+    //     if(rand.length() > 0){
+    //         reverse(rand.begin(),rand.end());
+    //         ans += " " + rand;
+    //     }
+    // }
+    // ans.erase(ans.begin());
+    // cout<<ans;
+    // compress the vector array of char in order if there is one a so a if two so a2 etc
+    // hello world
+    vector <char> c = {'a','a','b','b'};
+    int a = 1;
+    for (int i = 1; i < c.size(); i++) {
+       
+        if(c[i-1]==c[i]){
+            a++;       
         }
-        if(rand.length() > 0){
-            reverse(rand.begin(),rand.end());
-            ans += " " + rand;
+        else if(a!=0){
+            c[i] = a;
         }
-    }
-    ans.erase(ans.begin());
-    cout<<ans;
+        else{
+            a=0;
+        }
+        cout<<c[i];
+    }asdfasdfasdf
     return 0;
 }
