@@ -109,19 +109,21 @@ int main() {
     // compress the vector array of char in order if there is one a so a if two so a2 etc
     // hello world
     vector <char> c = {'a','a','b','b'};
-    int a = 1;
     for (int i = 1; i < c.size(); i++) {
-       
-        if(c[i-1]==c[i]){
-            a++;       
+       int a = 0;
+       for (int j = 0; j < c.size(); j++) {
+            if(c[i]==c[j]){
+                a++;
+                i++;
+            }        
         }
-        else if(a!=0){
-            c[i] = a;
-        }
-        else{
-            a=0;
-        }
+        c[i]  = c[i]; 
+        c[i-1]= a+'0';
+    }
+    for (int i = 0; i < c.size(); i++) {
+        
+    
         cout<<c[i];
-    }asdfasdfasdf
+    }
     return 0;
 }
