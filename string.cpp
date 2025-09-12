@@ -89,23 +89,11 @@ int main() {
     //         cout<<i;
     //     }        
     // }
-    // string words = "   this is   are  asdf arr   ";
-    // string ans = "";
-    // int n = words.size();
-    // reverse(words.begin(),words.end());
-    // for (int i = 0; i < words.length(); i++) {
-    //     string rand ="";
-    //     while(i<words.length() && words[i]!=' '){
-    //         rand += words[i];
-    //         i++;
-    //     }
-    //     if(rand.length() > 0){
-    //         reverse(rand.begin(),rand.end());
-    //         ans += " " + rand;
-    //     }
-    // }
-    // ans.erase(ans.begin());
-    // cout<<ans;
+    string words = "   this is   are  asdf arr   ";
+    string ans = "";
+    
+    ans.erase(ans.begin());
+    cout<<ans;
     // compress the vector array of char in order if there is one a so a if two so a2 etc
     // hello world
     vector <char> c = {'a','a','b','b'};
