@@ -141,6 +141,7 @@ int main() {
         }
         i--;
     }
+    arr.resize(idx);
     for(string i :arr){
         cout<<i<<" ";
     }
