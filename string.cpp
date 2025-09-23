@@ -19,6 +19,9 @@ bool hhhh(char c){
     {
         return true;
     }
+    if(isalnum(c)){
+        return true;
+    }
     return false;
 }
 
@@ -72,7 +75,7 @@ int main() {
     // string s2 = "ldknvjasabfasdf";
     // int arr[26] = {0};
     // for (int i = 0; i < s1.length(); i++) {
-    //         arr[s1[i] - 'a']++;
+    //         arr[s1[i] - "a']++;
     // }
     // int windowsize = s1.length();
     // for (int i = 0; i < s2.length(); i++) {
@@ -89,29 +92,57 @@ int main() {
     //         cout<<i;
     //     }        
     // }
-    string words = "   this is   are  asdf arr   ";
-    string ans = "";
-    
-    ans.erase(ans.begin());
-    cout<<ans;
+    // string words = "   this is   are  asdf arr   ";
+    // string ans = "";
+    // reverse(words.begin(),words.end());
+
+    // for (int i = 0; i < words.size(); i++) {
+    //     string ss = "";
+    //     if(words[i]!= ' ')
+    //     {
+    //     while (i<words.size(),words[i]!= ' ')
+    //     {
+    //         ss += words[i];
+    //         i++;
+    //     }
+    //     reverse(ss.begin(),ss.end());
+    //     ans += ' ' + ss;
+    //    }
+    //    else
+    //    {
+    //      continue;
+    //    }
+
+    // }
+    // ans.erase(ans.begin());
+    // cout<<ans;
     // compress the vector array of char in order if there is one a so a if two so a2 etc
     // hello world
-    vector <char> c = {'a','a','b','b'};
-    for (int i = 1; i < c.size(); i++) {
-       int a = 0;
-       for (int j = 0; j < c.size(); j++) {
-            if(c[i]==c[j]){
-                a++;
-                i++;
-            }        
+    vector <string> arr = {"a","a","b","b","c","c","c"};
+    int idx = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        string word = arr[i];
+        int count = 0;
+        while (i<arr.size()&&arr[i]==word)
+        {
+            count++;
+            i++;
         }
-        c[i]  = c[i]; 
-        c[i-1]= a+'0';
+        if(count == 1){
+            arr[idx++] = word;
+        }
+        else
+        {
+            arr[idx++] = word;
+            string str = to_string(count);
+            for(char i : str){
+                arr[idx++] = i;
+            }
+        }
+        i--;
     }
-    for (int i = 0; i < c.size(); i++) {
-        
-    
-        cout<<c[i];
+    for(string i :arr){
+        cout<<i<<" ";
     }
     return 0;
 }
