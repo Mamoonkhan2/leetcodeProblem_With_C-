@@ -71,10 +71,10 @@ int BinomialFactorial(int n ,int r){
 void Prime(int n){
     // like when give n=5 it will go from 2 to five and will find the primes
 
-    for (int i = 2; i <= n; i++) {  // i will be tested for prime
+    for (int i = 2; i <= n; i++) {  // i will be tested form 2 to n
         bool isPrime = true;
 
-        for (int j = 2; j*j <= i; j++) {
+        for (int j = 2; j*j <= i; j++) { // it will check if the i is prime or not if it is then it will give us the result 
             if (i % j == 0) {
                 isPrime = false;
                 break;
