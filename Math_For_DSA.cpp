@@ -49,5 +49,15 @@ int main()
     // string version2 = "1.10";
     // float vf = stof(version1);
     // cout<<vf;
+    // armstrom law
+    // int n = 153;
+    // int coudt = 0;
+    // while (n!=0)
+    // {
+    //     int ns =  n%10;
+    //     coudt+= (ns*ns*ns);
+    //     n/= 10;
+    // }
+    // cout<<coudt;
     return 0;
 }
