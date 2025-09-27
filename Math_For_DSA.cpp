@@ -12,19 +12,19 @@ int main()
     // 16 / 3
     // 16 / 4
     // sieve of erastanes 
-    int n = 103;
-    vector <int> isPrime(n+1,true);// it will go from {0,1,2--n}; also all the value will be true 
-    for (int i = 2; i <= n; i++) {// it will go through all the loop
-        if(isPrime[i])// mean it will check if the value is true so then we have to remove it multiple for 2 => 4,6,8,10 ----
-        {
-            for (int j = i*2; j <= n; j=j+i) {//int j = i*2 will become 4 then it will only update the conditional statemant like j=j+1 4+2=6
-                isPrime[j] = false; // it will false the value like 4 will become false
-            }
-        }
-        if(isPrime[i]){ // it will show like 2 is true so print it
-            cout<<i<<" ";
-        } 
-    }
+    // int n = 103;
+    // vector <int> isPrime(n+1,true);// it will go from {0,1,2--n}; also all the value will be true 
+    // for (int i = 2; i <= n; i++) {// it will go through all the loop
+    //     if(isPrime[i])// mean it will check if the value is true so then we have to remove it multiple for 2 => 4,6,8,10 ----
+    //     {
+    //         for (int j = i*2; j <= n; j=j+i) {//int j = i*2 will become 4 then it will only update the conditional statemant like j=j+1 4+2=6
+    //             isPrime[j] = false; // it will false the value like 4 will become false
+    //         }
+    //     }
+    //     if(isPrime[i]){ // it will show like 2 is true so print it
+    //         cout<<i<<" ";
+    //     } 
+    // }
     // for (int i = 2; i <= n; i++) {
 
     //    bool isPrime = true;
