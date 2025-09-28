@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <algorithm>
 #include <stdexcept> 
 using namespace std;
 
@@ -59,5 +60,32 @@ int main()
     //     n/= 10;
     // }
     // cout<<coud;
+    // brute force of finding gcd
+    int a = 6;
+    int b = 12;
+    int gcd = 0;
+    for (int i = 1; i <= min(a,b); i++) {
+                if(a%i==0&&b%i==0){
+                        gcd = i;
+                    }
+            }
+    cout<<gcd<<endl;
+    // euclid law of gcd(a,b) a>b gcd(a-b,b) b>a gcd(a,b-a)
+            while(a!=0&&b!=0){
+                if(a>b){
+                    a=a-b;
+                }
+                else
+                {
+                    b=b-a;
+                }
+            }
+            if(a==0){
+                gcd=b;
+            } 
+            else{
+                gcd = a;
+            }
+    cout<<gcd;
     return 0;
 }
