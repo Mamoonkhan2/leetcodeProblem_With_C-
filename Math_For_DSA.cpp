@@ -58,6 +58,6 @@ int main()
     //     coudt+= (ns*ns*ns);
     //     n/= 10;
     // }
-    // cout<<coudt;
+    // cout<<coud;
     return 0;
 }
