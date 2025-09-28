@@ -64,28 +64,48 @@ int main()
     int a = 6;
     int b = 12;
     int gcd = 0;
-    for (int i = 1; i <= min(a,b); i++) {
-                if(a%i==0&&b%i==0){
-                        gcd = i;
-                    }
-            }
-    cout<<gcd<<endl;
+    // for (int i = 1; i <= min(a,b); i++) {
+    //             if(a%i==0&&b%i==0){
+    //                     gcd = i;
+    //                 }
+    //         }
+    // cout<<gcd<<endl;
     // euclid law of gcd(a,b) a>b gcd(a-b,b) b>a gcd(a,b-a)
-            while(a!=0&&b!=0){
-                if(a>b){
-                    a=a-b;
-                }
-                else
-                {
-                    b=b-a;
-                }
-            }
-            if(a==0){
-                gcd=b;
-            } 
-            else{
-                gcd = a;
-            }
+    //         while(a!=0&&b!=0){
+    //             if(a>b){
+    //                 a=a-b;
+    //             }
+    //             else
+    //             {
+    //                 b=b-a;
+    //             }
+    //         }
+    //         if(a==0){
+    //             gcd=b;
+    //         } 
+    //         else{
+    //             gcd = a;
+    //         }
+    // cout<<gcd;
+    // optimize way of euclid algorithms a = 20 b = 8
+    // if a > b so instead of gcd(20-8=12,8) gcd(12-8=4,8) repetedly minusing the be we can do gcd(20%8=4,8) gcd(4,8%4=0) gcd(4,0)
+    // we will take the module of it
+    while(a!=0&&b!=0){
+        if(a>b){
+            a = a%b;
+        }
+        else{
+            b = b%a;
+        }
+    }
+    if(a==0){
+        gcd = b;
+    }
+    else{
+
+        gcd = a;
+    }
+    
     cout<<gcd;
     return 0;
 }
