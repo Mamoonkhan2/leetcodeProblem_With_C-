@@ -4,7 +4,33 @@
 #include <algorithm>
 #include <stdexcept> 
 using namespace std;
-
+int gcd(int a ,int b){
+    int gcd = 0;
+    if(a==0){
+        gcd = b;
+    }
+    if(b==0){
+        gcd = a;
+    }
+    while(a!=0&&b!=0){
+        if(a>b){
+            a=a%b;
+        }
+        else{
+            b=b%a;
+        }
+    }
+    if(a==0){
+        return b;
+    }
+    else{
+        return a;
+    }
+}
+int lcm(int a,int b){
+    int g = gcd(a,b);
+    return (a*b) / g;
+}
 int main()
 {
     // finding the prime number using square root like 
@@ -61,9 +87,8 @@ int main()
     // }
     // cout<<coud;
     // brute force of finding gcd
-    int a = 6;
-    int b = 12;
-    int gcd = 0;
+    int a = 28;
+    int b = 20;
     // for (int i = 1; i <= min(a,b); i++) {
     //             if(a%i==0&&b%i==0){
     //                     gcd = i;
@@ -90,22 +115,8 @@ int main()
     // optimize way of euclid algorithms a = 20 b = 8
     // if a > b so instead of gcd(20-8=12,8) gcd(12-8=4,8) repetedly minusing the be we can do gcd(20%8=4,8) gcd(4,8%4=0) gcd(4,0)
     // we will take the module of it
-    while(a!=0&&b!=0){
-        if(a>b){
-            a = a%b;
-        }
-        else{
-            b = b%a;
-        }
-    }
-    if(a==0){
-        gcd = b;
-    }
-    else{
-
-        gcd = a;
-    }
-    
-    cout<<gcd;
+    int lc = lcm(a,b);
+    int gc = gcd(a,b);
+    cout<<gc<<endl<<lc;
     return 0;
 }
