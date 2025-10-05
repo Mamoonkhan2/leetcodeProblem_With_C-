@@ -87,8 +87,7 @@ int main()
     // }
     // cout<<coud;
     // brute force of finding gcd
-    int a = 28;
-    int b = 20;
+
     // for (int i = 1; i <= min(a,b); i++) {
     //             if(a%i==0&&b%i==0){
     //                     gcd = i;
@@ -115,8 +114,19 @@ int main()
     // optimize way of euclid algorithms a = 20 b = 8
     // if a > b so instead of gcd(20-8=12,8) gcd(12-8=4,8) repetedly minusing the be we can do gcd(20%8=4,8) gcd(4,8%4=0) gcd(4,0)
     // we will take the module of it
-    int lc = lcm(a,b);
-    int gc = gcd(a,b);
-    cout<<gc<<endl<<lc;
+    // int lc = lcm(a,b);
+    // int gc = gcd(a,b);
+    int number = 3;
+    int power  = 3;
+    int n = 1 ;
+    while(power!=0){
+        if(power%2==1){
+            number *= number;
+        }
+        n++;
+        power/=2;
+    }
+    cout<<number;
+
     return 0;
 }
