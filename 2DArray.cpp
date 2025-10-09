@@ -34,7 +34,12 @@ void sum(int matrix[][3])
 }
 int main()
 {
-    int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    // int matrix[4][4] = {
+    //     {1,  2,  3,  4  },
+    //     {5,  6,  7,  8  },
+    //     {9,  10, 11, 12 },
+    //     {13, 14, 15, 16 }
+    // };
     // for (int row = 0; row < 3; row++)
     // {
     //     for (int col = 0; col < 3; col++)
@@ -43,7 +48,6 @@ int main()
     //         cin >> matrix[row][col];
     //     }
     // }
-    int col = 2;
     // int row = 2;
     // while(col>=0){
     //     cout<<matrix[row][col];
@@ -53,18 +57,33 @@ int main()
     // 00 02
     // 11 11
     // 22 20
-    // int matrix[3][3] ={ {1,2,3}
-    //                   , {4,5,6},
-    //                     {7,8,9}};
-    for (int row = 0; row < 3; row++)
-    {
-        for (int col = 0; col < 3; col++)
-        {
-            cout << matrix[col][col] << " | " << matrix[col][2 - col];
-            cout << endl;
+    vector <vector<int>> matrix[3][3] ={ {1,2,3}
+                                        ,{4,5,6},
+                                         {7,8,9}};
+    int sums=0;
+    //     int matrix[4][4] = {
+        // {1,  2,  3,  4  },
+    //     {5,  6,  7,  8  },
+    //     {9,  10, 11, 12 },
+    //     {13, 14, 15, 16 }
+    // };
+    // for (int i = 0; i < 4; i++) {
+    //     for (int j = 0; j < 4; j++) {
+    //         if(i==j){
+    //             sums+=matrix[i][j];
+    //         }
+    //         else if(j==4-i-1){
+    //             sums+=matrix[i][j];
+    //         }
+    //     }
+    // }
+    for (int i = 0; i < 3; i++) {
+        sums += matrix[i][i];
+        if(i!=3-i-1){
+            sums+=matrix[i][3-i-1];
         }
-        break;
+    
     }
-
+    cout<<sums;
     return 0;
 }
