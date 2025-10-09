@@ -79,11 +79,8 @@ int main()
     // }
     for (int i = 0; i < 3; i++) {
         sums += matrix[i][i];
-        if(i!=3-i-1){
-            sums+=matrix[i][3-i-1];
-        }
-    
-    }
+
+        
     cout<<sums;
     return 0;
 }
