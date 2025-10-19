@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <unordered_map>
-#include <set>
+#include <unordered_set>
 using namespace std;
 int two_sum(vector<int>&arr,int tar,vector<int>& ans){
         for (int i = 0; i <=arr.size()-1; i++) {
@@ -29,6 +29,7 @@ void V1_Optimize_two_sum(vector<int>&arr,int tar){
             cout<<arr[i]<<" "<<arr[j]<<endl;
             break;
         }
+        
         else if(arr[i]+arr[j] !=tar){
             j++;
         }
@@ -77,10 +78,11 @@ pair<int,int> V3_Optimize_two_sum(vector<int>&arr,int tar){
     return hh;
 }
 void Missing_And_Duplicate_Value(vector<vector<int>>&arr){
+    // expected_sum + duplicate_value(a) - b = actual_sum // formula  
+    unordered_set<int> s;
     int n = arr.size();
     int expected_sum = (n*n *(n*n+1))/2;
     int actual_sum   = 0;
-    set<int> s;
     int a,b;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < arr[0].size(); j++) {
@@ -94,19 +96,56 @@ void Missing_And_Duplicate_Value(vector<vector<int>>&arr){
     b = expected_sum + a - actual_sum; 
     cout<<a<<b;
 }
+void V1_duplicate(vector<int>& arr){
+    int n = arr.size();
+    int a,b;
+    vector<int> duplicate(n,0);
+    for (int i = 0; i < n; i++) {
+        duplicate[arr[i]-1]++;
+    }
+    for(int i = 0; i < n; i++){
+        if(duplicate[i]>1){
+            a=i+1;
+        }
+        if(duplicate[i]==0){
+            b=i+1;
+        }
+    }
+    cout<<a<<b;
+}
+void V2_duplicate(vector<int>& arr){
+    int n = arr.size();
+    unordered_set<int> s;
+    for (int i = 0; i < n; i++) {
+        if(s.find(arr[i])!=s.end()){
+            cout<<arr[i]<<endl;
+            break;
+        }
+        s.insert(arr[i]);
+    }
+    
+}
+void V3_duplicate(vector<int>& arr){
+    int n = arr.size();
+    int slow = arr[0],fast = arr[0] ;
+    do
+    {
+        slow = arr[slow];
+        fast = arr[arr[fast]];
+    } while (slow!=fast);
+    slow = arr[0];
+    while (slow!=fast)
+    {
+        fast = arr[fast];
+    }
+    cout<<slow<<endl;
+}
+
 
 int main() {
     // vector<vector<int>> arr = {{1,2,3},{4,9,6},{7,8,9}};
     // Missing_And_Duplicate_Value(arr);
-    vector<int> arr = {1,2,3,4,3};
-    unordered_map<int,int> s;
-    int d;
-    for (int i = 0; i < arr.size(); i++) {
-        if(s.find(arr[i])!=s.end()){
-            d = arr[i];
-            break;
-        }
-        s.emplace(arr[i],i);
-    }
+    vector<int> arr = {3,1,3,4,2};
+    V3_duplicate(arr);
     return 0;
 }
