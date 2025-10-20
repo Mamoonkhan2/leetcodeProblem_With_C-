@@ -2,50 +2,51 @@
 #include <vector>
 using namespace std;
 int k = 0;
-void spericalmatrix(int stcol, int endcol, int strow, int endrow, const std::vector<std::vector<int>>& sss, int *arr)
+void spericalmatrix(int stcol, int endcol, int strow, int endrow, const std::vector<std::vector<int>> &sss, int *arr)
 {
     while (strow <= endrow && stcol <= endcol)
     {
 
         for (int i = stcol; i <= endcol; i++)
         {
-            cout<<sss[strow][i];
+            cout << sss[strow][i];
             arr[k++] = sss[strow][i];
         }
         cout << endl;
         for (int i = strow + 1; i <= endrow; i++)
         {
-            cout<<sss[i][endcol];
+            cout << sss[i][endcol];
             arr[k++] = sss[i][endcol];
         }
         cout << endl;
         for (int i = endcol - 1; i >= stcol; i--)
         {
-            if(strow == endrow){
+            if (strow == endrow)
+            {
                 break;
             }
-            cout<< sss[endrow][i];
+            cout << sss[endrow][i];
             arr[k++] = sss[endrow][i];
         }
         cout << endl;
-        for (int i = endrow - 1; i >= strow+1 ; i--)
+        for (int i = endrow - 1; i >= strow + 1; i--)
         {
-            cout<<sss[i][stcol];
+            cout << sss[i][stcol];
             arr[k++] = sss[i][stcol];
         }
         cout << endl;
-        strow++,stcol++,endrow--;endcol--;  
+        strow++, stcol++, endrow--;
+        endcol--;
     }
 }
-
 
 int main()
 {
     int arr[25] = {0};
-    vector <vector<int>> sss = {
-        {1,3,6},
-        {12,15,18},
-        {24,27,30},
+    vector<vector<int>> sss = {
+        {1, 3, 6},
+        {12, 15, 18},
+        {24, 27, 30},
     };
     // vector<vector<int>> sss = {
     //     {1, 2, 3, 4, 5},
@@ -57,8 +58,9 @@ int main()
     int stcol = 0;
     int endcol = sss[0].size() - 1;
     spericalmatrix(stcol, endcol, strow, endrow, sss, arr);
-    for (int i = 0; i < 26; i++) {
-        cout<<arr[i]<<" ";    
+    for (int i = 0; i < 26; i++)
+    {
+        cout << arr[i] << " ";
     }
     // int target = 6;
     // int row = 0 ;

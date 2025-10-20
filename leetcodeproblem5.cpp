@@ -7,50 +7,49 @@ using namespace std;
 
 void printVector(vector<int> nums)
 {
-    for(int Value:nums)
+    for (int Value : nums)
     {
-        cout<<Value;
+        cout << Value;
     }
-    cout<<endl;
+    cout << endl;
 }
-vector<int> PairSum(vector <int> nums,int T)
+vector<int> PairSum(vector<int> nums, int T)
 {
-    vector <int> vec;
+    vector<int> vec;
     int n = nums.size();
     for (int i = 0; i < n; i++)
     {
-        for (int j = i+1; j < n; j++) {
+        for (int j = i + 1; j < n; j++)
+        {
             if (nums[i] + nums[j] == T)
             {
                 vec.push_back(nums[i]);
                 vec.push_back(nums[j]);
                 return vec;
             }
-            
         }
     }
     return vec;
-
 }
-vector<int> PairSumOptimize(vector<int> nums,int T)
+vector<int> PairSumOptimize(vector<int> nums, int T)
 {
+    int st = 0;
     int end = nums.size();
-    int st =0;
-    int C = 0;
-    vector <int> TempVEc;
-    
-    while (st<end)
+    int Sum = 0;
+    vector<int> TempVEc;
+
+    while (st < end)
     {
-        C = nums[st]+nums[end];
-        if (C>T)
+        Sum = nums[st] + nums[end];
+        if (Sum > T)
         {
             end--;
         }
-        if (C<T)
+        if (Sum < T)
         {
             st++;
         }
-        if(C == T)
+        if (Sum == T)
         {
             TempVEc.push_back(nums[st]);
             TempVEc.push_back(nums[end]);
@@ -59,102 +58,119 @@ vector<int> PairSumOptimize(vector<int> nums,int T)
     }
     return TempVEc;
 }
-int majorityElementforeach(vector<int>& nums) 
+int majorityElementforeach(vector<int> &nums)
+{
+    int n = nums.size();
+    for (int val : nums)
     {
-        int n = nums.size();
-        for(int val: nums)
+        int freq = 0;
+        for (int el : nums)
         {
-            int freq = 0;
-            for(int el: nums)
+            if (el == val)
             {
-                if(el == val)
-                {
-                    freq++;
-                }
-            }
-            if(freq > n/2)
-            {
-                return val;
+                freq++;
             }
         }
-        return -1; // یا throw exception، اگر majority element guaranteed نہ ہو
+        if (freq > n / 2)
+        {
+            return val;
+        }
     }
-int majorityelementforloop(vector<int>& LongVector)
+    return -1; // یا throw exception، اگر majority element guaranteed نہ ہو
+}
+int majorityelementforloop(vector<int> &LongVector)
 {
     int n = LongVector.size();
     for (int i = 0; i < n; i++)
     {
         int freq = 0;
-        for (int j = 0; j < n; j++) {
-            if(LongVector[j] == LongVector[i]){
+        for (int j = 0; j < n; j++)
+        {
+            if (LongVector[j] == LongVector[i])
+            {
                 freq++;
-            }}
-            if(freq>n/2){
-            return LongVector[i];}
+            }
         }
+        if (freq > n / 2)
+        {
+            return LongVector[i];
+        }
+    }
     return -1;
 }
-int majorityOptimize(vector <int> arr)
+int majorityOptimize(vector<int> arr)
 {
-    sort(arr.begin(),arr.end());
+    sort(arr.begin(), arr.end());
     // vector <int> arr = {1,1,1,2,2,2,2,2,2};
-    int freq = 1,ans = arr[0];
-    for (int i = 1; i < arr.size(); i++) {
-        if (arr[i] == arr[i-1])
+    int freq = 1, ans = arr[0];
+    for (int i = 1; i < arr.size(); i++)
+    {
+        if (arr[i] == arr[i - 1])
         {
-            freq ++;
+            freq++;
         }
-        else if (freq>arr.size()/2)
+        else if (freq > arr.size() / 2)
         {
             break;
         }
         else
         {
-            ans = arr[i],freq = 0;
+            ans = arr[i], freq = 0;
         }
-    }    
+    }
     return ans;
 }
-int moresAlgorithms(vector <int> arr){
-    int freq =0,ans = 0;
+int moresAlgorithms(vector<int> arr)
+{
+    int freq = 0, ans = 0;
     // if we sort the arr before the algorithm it will be also nice
-    for (int i = 0; i < arr.size(); i++) {
-       if (freq == 0)
-       {
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (freq == 0)
+        {
             ans = arr[i];
         }
-        else if(ans == arr[i]){
+        else if (ans == arr[i])
+        {
             freq++;
         }
-        else{
+        else
+        {
             freq--;
         }
-       
-    }    
+    }
     int count = 0;
-    for(int i:arr){
-        if(ans == i){
+    for (int i : arr)
+    {
+        if (ans == i)
+        {
             count++;
         }
     }
-    if(count>arr.size()/2){return ans;}
+    if (count > arr.size() / 2)
+    {
+        return ans;
+    }
     return -1;
 }
 
 int main()
 {
-    vector <int> nums ={1,2,3,4};
+    vector<int> nums = {1, 2, 3, 4};
     int n = nums.size();
-    vector <int> ans(n,1);
-    vector <int> prefix(n,1);
-    vector <int> suffix(n,1);
-    for (int i = 1; i < n; i++) {
-        prefix[i] = prefix[i-1] * nums[i-1];
+    vector<int> ans(n, 1);
+    vector<int> prefix(n, 1);
+    vector<int> suffix(n, 1);
+    for (int i = 1; i < n; i++)
+    {
+        prefix[i] = prefix[i - 1] * nums[i - 1];
     }
-    for (int i = n-2; i >= 0; i--) {
-        suffix[i] = suffix[i+1] * nums[i+1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        suffix[i] = suffix[i + 1] * nums[i + 1];
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         ans[i] = suffix[i] * prefix[i];
     }
     printVector(ans);
@@ -168,6 +184,6 @@ int main()
     //     }
     //     ans.push_back(p) ;
     // }
-    
+
     return 0;
 }

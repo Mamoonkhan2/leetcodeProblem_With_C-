@@ -4,10 +4,11 @@ using namespace std;
 // using int = h;
 // typedef string str;
 // using string = str ;
-int main() {
+int main()
+{
     str name;
-    cin>>name;
-    cout<<name;
+    cin >> name;
+    cout << name;
 
     return 0;
 }

@@ -2,45 +2,54 @@
 #include <vector>
 #include <math.h>
 #include <algorithm>
-#include <stdexcept> 
+#include <stdexcept>
 using namespace std;
-int gcd(int a ,int b){
+int gcd(int a, int b)
+{
     int gcd = 0;
-    if(a==0){
+    if (a == 0)
+    {
         gcd = b;
     }
-    if(b==0){
+    if (b == 0)
+    {
         gcd = a;
     }
-    while(a!=0&&b!=0){
-        if(a>b){
-            a=a%b;
+    while (a != 0 && b != 0)
+    {
+        if (a > b)
+        {
+            a = a % b;
         }
-        else{
-            b=b%a;
+        else
+        {
+            b = b % a;
         }
     }
-    if(a==0){
+    if (a == 0)
+    {
         return b;
     }
-    else{
+    else
+    {
         return a;
     }
 }
-int lcm(int a,int b){
-    int g = gcd(a,b);
-    return (a*b) / g;
+int lcm(int a, int b)
+{
+    int g = gcd(a, b);
+    return (a * b) / g;
 }
 int main()
 {
-    // finding the prime number using square root like 
+    // finding the prime number using square root like
     // 16 / 1
     // 16 / 2
     // 16 / 3
     // 16 / 4
-    // sieve of erastanes 
+    // sieve of erastanes
     // int n = 103;
-    // vector <int> isPrime(n+1,true);// it will go from {0,1,2--n}; also all the value will be true 
+    // vector <int> isPrime(n+1,true);// it will go from {0,1,2--n}; also all the value will be true
     // for (int i = 2; i <= n; i++) {// it will go through all the loop
     //     if(isPrime[i])// mean it will check if the value is true so then we have to remove it multiple for 2 => 4,6,8,10 ----
     //     {
@@ -50,7 +59,7 @@ int main()
     //     }
     //     if(isPrime[i]){ // it will show like 2 is true so print it
     //         cout<<i<<" ";
-    //     } 
+    //     }
     // }
     // for (int i = 2; i <= n; i++) {
 
@@ -61,13 +70,13 @@ int main()
 
     //                             break;
     //         }
-    //    } 
-        // for (int j = i  ; j*j <= i ; j++) {
-        //     if( == 0){
-        //     }
-        
-        // }
-        // if(isPrime)
+    //    }
+    // for (int j = i  ; j*j <= i ; j++) {
+    //     if( == 0){
+    //     }
+
+    // }
+    // if(isPrime)
     //     {
     //         cout<<i<<" ";
     //     }
@@ -106,7 +115,7 @@ int main()
     //         }
     //         if(a==0){
     //             gcd=b;
-    //         } 
+    //         }
     //         else{
     //             gcd = a;
     //         }
@@ -117,16 +126,18 @@ int main()
     // int lc = lcm(a,b);
     // int gc = gcd(a,b);
     int number = 3;
-    int power  = 3;
-    int n = 1 ;
-    while(power!=0){
-        if(power%2==1){
+    int power = 3;
+    int n = 1;
+    while (power != 0)
+    {
+        if (power % 2 == 1)
+        {
             number *= number;
         }
         n++;
-        power/=2;
+        power /= 2;
     }
-    cout<<number;
+    cout << number;
 
     return 0;
 }

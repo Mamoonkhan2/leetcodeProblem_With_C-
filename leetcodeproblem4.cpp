@@ -4,26 +4,24 @@
 #include <vector>
 using namespace std;
 
-void PrintSubArray(int arr[],int n)
+void PrintSubArray(int arr[], int n)
 {
     for (int str = n; str >= 0; str--)
     {
         for (int end = str; end < n; end++)
         {
-            for (int i =end ; i < n; i++)
+            for (int i = end; i < n; i++)
             {
-                cout<<arr[i];
+                cout << arr[i];
             }
-            cout<<" ";
-            
+            cout << " ";
         }
-        cout<<endl;
-       
+        cout << endl;
     }
-    
-    cout<<endl;
+
+    cout << endl;
 }
-void MaximumOfSubArraySum(int arr[],int count)
+void MaximumOfSubArraySum(int arr[], int count)
 {
 
     int maximum = -99999;
@@ -34,11 +32,11 @@ void MaximumOfSubArraySum(int arr[],int count)
         {
             currentSum += arr[j];
         }
-        cout<<endl;
-        maximum = max(currentSum,maximum);
+        cout << endl;
+        maximum = max(currentSum, maximum);
     }
-    cout<<maximum;
-    cout<<endl;
+    cout << maximum;
+    cout << endl;
 }
 
 int main()
@@ -55,19 +53,11 @@ int main()
     //     {
     //         curretsum = 0;
     //     }
-    
+
     // }
     // cout<<maximum;
-    int arr[5]={1,2,3,4,5};
-    PrintSubArray(arr,5);
-
-
-
-
-
-
+    int arr[5] = {1, 2, 3, 4, 5};
+    PrintSubArray(arr, 5);
 
     return 0;
 }
-
-

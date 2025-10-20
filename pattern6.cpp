@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-int main(int argc, const char** argv) {
+int main(int argc, const char **argv)
+{
 
     // for (int i = 1;i <= 5;i++)
     // {
@@ -10,7 +11,6 @@ int main(int argc, const char** argv) {
     //     }
     //     std::cout  << std::endl;
     // }
-
 
     // rectangle
     // for (int i = 1; i <= 6; i++)
@@ -25,24 +25,22 @@ int main(int argc, const char** argv) {
     //         {
     //             std::cout << " ";
     //         }
-            
+
     //     }
     //     std::cout << std::endl;
     // }
-    
 
-    // reverse triangle 
+    // reverse triangle
 
     // for (int i = 0; i < 6; i++)
     // {
-        
+
     //     for (int j = 6;j> i;j--)
     //     {
     //         std::cout << "*" ;
     //     }
     //     cout<<endl;
     // }
-
 
     // // printing the number in sequance
     // int n = 3;
@@ -55,7 +53,6 @@ int main(int argc, const char** argv) {
     //         num++;
     //     }
     //     std::cout <<  std::endl;
-        
 
     // // printint the char in sequence
     // for (int i = 0; i < 4; i++)
@@ -68,8 +65,8 @@ int main(int argc, const char** argv) {
     //     }
     //     cout<<endl;
     // }
-    
-    // // traingle 
+
+    // // traingle
     // int n = 6;
     // int number = 1;
     // for (int i = 0; i < n; i++)
@@ -80,9 +77,9 @@ int main(int argc, const char** argv) {
     //     }
     //     number++;
     //     cout<<endl;
-        
+
     // }
-    
+
     // // floyd's traingle
     // int n = 4;
     // int x = 1;
@@ -94,7 +91,7 @@ int main(int argc, const char** argv) {
     //         x++;
     //     }
     // }
-    
+
     // // inverted traingle
     // int n = 4;
     // int x = 1;
@@ -107,15 +104,15 @@ int main(int argc, const char** argv) {
     //     }
     //     for (int j = i; j <= n-1; j++)
     //     {
-            
+
     //         std::cout << x;
-           
+
     //      /* code */
     //     }
     //     x++;
-       
+
     // }
-    
+
     // // pramid traingle
     // int n = 10;
     // for (int i = 0; i < n; i++)
@@ -135,15 +132,15 @@ int main(int argc, const char** argv) {
     //         std::cout << j+1;
     //         x++;
     //     }
-        
+
     //     cout<<endl;
     // }
-    
+
     // // hallow diamond shape
     // int n = 25;
     // for (int i = 0; i < n; i++)
     // {
-        
+
     //     for (int j = 0; j < n-i-1; j++)
     //     {
     //         cout<<" ";
@@ -158,18 +155,17 @@ int main(int argc, const char** argv) {
     //         std::cout << "*" ;
     //     }
     //     cout<<endl;
-        
+
     // }
     // for (int i = 0; i < n-1; i++)
     // {
-        
+
     //     for (int j = 0; j < i+1; j++)
     //     {
     //         cout<<" ";
     //     }
 
     //     cout<<"*";
-
 
     //     if (i != n - 2)
     //     {
@@ -181,14 +177,14 @@ int main(int argc, const char** argv) {
     //     }
 
     //     cout<<endl;
-        
+
     // }
-   
-    // buterfly effect 
+
+    // buterfly effect
     // upper
     // int n = 4;
     // for (int i = 0; i < n; i++)
-    // {   
+    // {
     //     // star
     //     for (int j= 0;j<=i;j++)
     //     {
@@ -205,19 +201,17 @@ int main(int argc, const char** argv) {
     //         std::cout << " " ;
     //     }
 
-        
     //     // star
     //     for (int j= 0;j<=i;j++)
     //     {
     //         std::cout << "*" ;
     //     }
 
-       
     //     cout<<endl;
     // }
     // // lower
     // for (int i = n-1; i >= 0; i--)
-    // {   
+    // {
     //     // star
     //     for (int j= 0;j<=i;j++)
     //     {
@@ -234,14 +228,12 @@ int main(int argc, const char** argv) {
     //         std::cout << " " ;
     //     }
 
-        
     //     // star
     //     for (int j= 0;j<=i;j++)
     //     {
     //         std::cout << "*" ;
     //     }
 
-       
     //     cout<<endl;
     // }
     return 0;
