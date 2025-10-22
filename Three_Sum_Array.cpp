@@ -81,35 +81,41 @@ void V3_Three_Sum_Array(vector<int> &arr)
 void V4_Three_Sum_Array(vector<int> &arr){
     int n = arr.size();
     sort(arr.begin(),arr.end());
-    int tar = 0;
-    for(int i = 0;i<n;i++)
-    {
-    if(arr[i]==arr[i-1]) continue;
-    int j = i+1;
-    int k = n-1;
-    while (j<k)
-    {
-        int sum = arr[i]+arr[j]+arr[k];
-        if(sum==tar){
-            cout<<arr[i]<<arr[j]<<arr[k]<<endl;
-            j++;
-            k--;
-            while(j<k&&arr[j]==arr[j-1]) j++;
-        }
-        else if(sum<tar){
-            j++;
-        }
-        else{
-            k--;
+    set<vector<int>> ans;
+    for (int i = 0; i < n; i++) {
+        int j = i+1,k = n-1;
+        if(arr[i]==arr[i-1]) continue;
+        while (j<k)
+        {
+            int sum = arr[i]+arr[j]+arr[k];
+            if (sum == 0)
+            {
+                vector<int> triplet = {arr[i],arr[j],arr[k]};
+                sort(triplet.begin(),triplet.end());
+                ans.insert(triplet);
+                k--;j++;
+                while(j<k&&arr[j]==arr[j-1]) j++;
+            }
+            else if(sum<0){
+                j++;
+            }
+            else{
+                k--;
+            }
+            
         }
     }
+    for(auto f:ans){
+        for(auto s:f){
+            cout<<s<<" ";
+        }
+        cout<<endl;
     }
 }
 int main()
 {
-
     vector<int> arr = {-1, 0, 1, 2, -1, -4};
     int n = arr.size();
-    
+    int arr[10] = {1,2,3,4,5,6,7,8,9}
     return 0;
 }

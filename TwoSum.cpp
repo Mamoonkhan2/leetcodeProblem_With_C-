@@ -4,8 +4,7 @@
 #include <unordered_map>
 #include <unordered_set>
 using namespace std;
-int two_sum(vector<int> &arr, int tar, vector<int> &ans)
-{
+int two_sum(vector<int> &arr, int tar, vector<int> &ans){
     for (int i = 0; i <= arr.size() - 1; i++)
     {
         for (int j = i + 1; j <= arr.size() - 1; j++)
@@ -21,8 +20,7 @@ int two_sum(vector<int> &arr, int tar, vector<int> &ans)
     }
     return -1;
 }
-void V1_Optimize_two_sum(vector<int> &arr, int tar)
-{
+void V1_Optimize_two_sum(vector<int> &arr, int tar){
     int i = 0;
     int j = 1;
     while (j <= (arr.size() - 1))
@@ -44,8 +42,7 @@ void V1_Optimize_two_sum(vector<int> &arr, int tar)
         }
     }
 }
-void V2_Optimize_two_sum(vector<int> &arr, int tar)
-{
+void V2_Optimize_two_sum(vector<int> &arr, int tar){
     int i = 0;
     int j = arr.size() - 1;
     sort(arr.begin(), arr.end());
@@ -165,4 +162,13 @@ int main()
 {
     // vector<vector<int>> arr = {{1,2,3},{4,9,6},{7,8,9}};
     // Missing_And_Duplicate_Value(arr);
+    int arr[6] ={1,2,3,4,3,6};
+    unordered_set<int> _check;
+    int D,M;
+    for (int i = 0; i < n; i++) {
+        if(_check.find(arr[i])!=_check.end()){
+            D = arr[i];
+        }
+        _check.insert(arr[i]);
+    }
 }
